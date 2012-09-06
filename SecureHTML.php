@@ -43,6 +43,7 @@ $wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = arr
 );
 
 $wgSecureHTMLSecrets = array();
+$wgSecureHTMLSpecialRight = 'edit';
 
 $dir = dirname(__FILE__) . '/';
 

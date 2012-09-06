@@ -1,12 +1,20 @@
 <?php
 class SpecialSecureHTML extends SpecialPage {
   function __construct() {
-    parent::__construct( 'SecureHTML' );
+    global $wgSecureHTMLSpecialRight;
+
+    parent::__construct( 'SecureHTML', $wgSecureHTMLSpecialRight );
   }
 
   function execute($par) {
     global $wgOut;
     global $wgRequest;
+    global $wgUser;
+
+    if ( !$this->userCanExecute($wgUser) ) {
+      $this->displayRestrictionError();
+      return;
+    }
 
     $this->setHeaders();
 
