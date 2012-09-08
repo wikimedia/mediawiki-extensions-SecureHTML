@@ -10,5 +10,5 @@ $specialPageAliases = array();
 
 /** English (English) */
 $specialPageAliases['en'] = array(
-  'SecureHTML' => array( 'SecureHTML', 'Secure HTML' ),
+	'SecureHTML' => array( 'SecureHTML', 'Secure HTML' ),
 );
