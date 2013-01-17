@@ -68,12 +68,12 @@ function secureHTMLRender( $input, $argv ) {
 	global $wgSecureHTMLSecrets;
 	global $shtml_keys;
 
-	# If the array is empty, there is no possible way this will work.
-	if ( count( $wgSecureHTMLSecrets ) == 0 ) {
-		return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
-	}
-
 	if ( $argv['version'] == '2' ) {
+		# If the array is empty, there is no possible way this will work.
+		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
+			return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
+		}
+
 		# Get a list of key names.
 		$keynames = array_keys( $wgSecureHTMLSecrets );
 
@@ -88,6 +88,11 @@ function secureHTMLRender( $input, $argv ) {
 	} elseif ( !$argv['version'] || ( $argv['version'] == '1' ) ) {
 		# Version 1 is deprecated and will be removed at a future date.
 		# Please be sure to migrate Version 1 snippets to Version 2.
+
+		# If the array is empty, there is no possible way this will work.
+		if ( count( $shtml_keys ) == 0 ) {
+			return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
+		}
 
 		# Get a list of key names.
 		$keynames = array_keys( $shtml_keys );
