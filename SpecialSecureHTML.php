@@ -35,11 +35,11 @@ class SpecialSecureHTML extends SpecialPage {
 			$keysecret = $wgRequest->getText( 'keysecret' );
 			$html = str_replace( "\r\n", "\n", $wgRequest->getText( 'html' ) );
 			if ( $version == '2' ) {
-				$output = '<shtml version="2" ' . ( $keyname ? 'keyname="' . $keyname . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html, $keysecret ) . '">';
+				$output = '<shtml version="2" ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html, $keysecret ) . '">';
 				$output .= $html;
 				$output .= '</shtml>';
 			} else {
-				$output = '<shtml ' . ( $keyname ? 'keyname="' . $keyname . '" ' : '' ) . 'hash="' . md5( $keysecret . $html ) . '">';
+				$output = '<shtml ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . md5( $keysecret . $html ) . '">';
 				$output .= $html;
 				$output .= '</shtml>';
 			}
