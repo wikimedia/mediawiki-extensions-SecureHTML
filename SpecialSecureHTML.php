@@ -53,8 +53,23 @@ class SpecialSecureHTML extends SpecialPage {
 			$wgOut->addWikiText( wfMessage( 'securehtml-inputinstructions' ) );
 			$wgOut->addHTML( '<form method="post">' . "\n" );
 			$wgOut->addHTML( '<table>' . "\n" );
-			$wgOut->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-version' ) . ':</strong></td><td><select name="version"><option value="1">1 (' . wfMessage( 'securehtml-form-deprecated' ) . ')</option><option value="2" selected="selected">2</option></select></td></tr>' . "\n" );
-			$wgOut->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-keyname' ) . ':</strong></td><td><input name="keyname" size="20"></td></tr>' . "\n" );
+			if ( count( $shtml_keys ) > 0 ) {
+				$wgOut->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-version' ) . ':</strong></td><td><select name="version"><option value="1">1 (' . wfMessage( 'securehtml-form-deprecated' ) . ')</option><option value="2" selected="selected">2</option></select></td></tr>' . "\n" );
+			} else {
+				$wgOut->addHTML( '<input type="hidden" name="version" value="2" />' . "\n" );
+			}
+			$wgOut->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-keyname' ) . ':</strong></td><td><select name="keyname"><option value=""></option>' );
+			if ( is_array( $wgSecureHTMLSecrets ) ) {
+				foreach ( array_keys( $wgSecureHTMLSecrets ) as $keyname ) {
+					$wgOut->addHTML( '<option value="' . htmlspecialchars( $keyname ) . '">' . htmlspecialchars( $keyname ) . '</option>' );
+				}
+			}
+			if ( is_array( $shtml_keys ) ) {
+				foreach ( array_keys( $shtml_keys ) as $keyname ) {
+					$wgOut->addHTML( '<option value="' . htmlspecialchars( $keyname ) . '">' . htmlspecialchars( $keyname ) . ' (' . wfMessage( 'securehtml-form-deprecated' ) . ')</option>' );
+				}
+			}
+			$wgOut->addHTML( '</td></tr>' . "\n" );
 			$wgOut->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-keysecret' ) . ':</strong></td><td><input type="password" name="keysecret" size="20"></td></tr>' . "\n" );
 			$wgOut->addHTML( '</table>' . "\n" );
 			$wgOut->addHTML( '<strong>' . wfMessage( 'securehtml-form-html' ) . ':</strong><br/><textarea style="width: 100%;" name="html" cols="60" rows="20"></textarea><br/>' . "\n" );
