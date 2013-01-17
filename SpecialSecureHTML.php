@@ -69,7 +69,7 @@ class SpecialSecureHTML extends SpecialPage {
 					$wgOut->addHTML( '<option value="' . htmlspecialchars( $keyname ) . '">' . htmlspecialchars( $keyname ) . ' (' . wfMessage( 'securehtml-form-deprecated' ) . ')</option>' );
 				}
 			}
-			$wgOut->addHTML( '</td></tr>' . "\n" );
+			$wgOut->addHTML( '</select></td></tr>' . "\n" );
 			$wgOut->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-keysecret' ) . ':</strong></td><td><input type="password" name="keysecret" size="20"></td></tr>' . "\n" );
 			$wgOut->addHTML( '</table>' . "\n" );
 			$wgOut->addHTML( '<strong>' . wfMessage( 'securehtml-form-html' ) . ':</strong><br/><textarea style="width: 100%;" name="html" cols="60" rows="20"></textarea><br/>' . "\n" );
