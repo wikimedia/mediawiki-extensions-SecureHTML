@@ -10,6 +10,8 @@ class SpecialSecureHTML extends SpecialPage {
 		global $wgOut;
 		global $wgRequest;
 		global $wgUser;
+		global $wgSecureHTMLSecrets;
+		global $shtml_keys;
 
 		if ( !$this->userCanExecute( $wgUser ) ) {
 			$this->displayRestrictionError();
@@ -17,6 +19,15 @@ class SpecialSecureHTML extends SpecialPage {
 		}
 
 		$this->setHeaders();
+
+		if ( ( count( $wgSecureHTMLSecrets ) == 0 ) && ( count( $shtml_keys ) == 0 ) ) {
+			$wgOut->addWikiText( wfMessage( 'securehtml-nokeys' ) );
+			return;
+		}
+
+		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
+			$wgOut->addWikiText( wfMessage( 'securehtml-legacykeys' ) );
+		}
 
 		if ( $wgRequest->getText( 'keysecret' ) && $wgRequest->getText( 'html' ) ) {
 			$version = $wgRequest->getText( 'version' );

@@ -12,6 +12,7 @@ $messages['en'] = array(
 	'securehtml' => 'Secure HTML',
 	'securehtml-desc' => 'Lets you include arbitrary HTML in an authorized and secure way',
 	'securehtml-nokeys' => 'Error: wgSecureHTMLSecrets is not populated',
+	'securehtml-legacykeys' => 'Warning: wgSecureHTMLSecrets (Version 2) is not populated, but shtml_keys (Version 1) is.  Please convert to Version 2 hashes as soon as possible, as Version 1 is deprecated.',
 	'securehtml-invalidhash' => 'Error: Invalid hash',
 	'securehtml-invalidversion' => 'Error: Invalid version',
 	'securehtml-input-title' => 'HTML Input',
