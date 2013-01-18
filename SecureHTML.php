@@ -42,8 +42,13 @@ $wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = arr
 	'version' => '2.1',
 );
 
-$wgSecureHTMLSecrets = array();
-$wgSecureHTMLSpecialRight = 'edit';
+# Default configuration globals
+if ( !isset( $wgSecureHTMLSecrets ) ) {
+	$wgSecureHTMLSecrets = array();
+}
+if ( !isset( $wgSecureHTMLSpecialRight ) ) {
+	$wgSecureHTMLSpecialRight = 'edit';
+}
 
 $dir = dirname( __FILE__ ) . '/';
 
