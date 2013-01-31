@@ -116,7 +116,7 @@ function secureHTMLRender( $input, $argv ) {
 
 	# If the test hash matches the supplied hash, return the raw HTML.  Otherwise, error.
 	if ( $testhash == $argv['hash'] ) {
-		return( $input );
+		return( array( $input, 'markerType' => 'nowiki' ) );
 	} else {
 		return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
 	}
