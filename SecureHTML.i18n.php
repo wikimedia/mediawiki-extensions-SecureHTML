@@ -87,6 +87,13 @@ Falls kein Schlüsselname angegeben ist, wird der erste Schlüssel in <code>$wgS
 Falls der erzeugte Code nicht funktioniert, versuche das Entfernen aller Zeilenvorschübe des Eingabe-HTML und versuche es erneut.',
 );
 
+/** British English (British English)
+ * @author Shirayuki
+ */
+$messages['en-gb'] = array(
+	'securehtml-desc' => 'Lets you include arbitrary HTML in an authorised and secure way',
+);
+
 /** French (français)
  * @author Gomoko
  */
