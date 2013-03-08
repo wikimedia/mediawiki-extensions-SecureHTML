@@ -141,6 +141,14 @@ $messages['ja'] = array(
 	'securehtml-form-submit' => '送信',
 );
 
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'securehtml' => 'Sécheren HTML',
+	'securehtml-invalidversion' => 'Feeler: Net valabel Versioun',
+);
+
 /** Macedonian (македонски)
  * @author Bjankuloski06
  */
