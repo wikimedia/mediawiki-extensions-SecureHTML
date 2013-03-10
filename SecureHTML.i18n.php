@@ -61,6 +61,16 @@ See also:
 	'securehtml-outputinstructions' => 'Special:SecureHTML: Instructions using the output returned by filling in the input form.',
 );
 
+/** Breton (brezhoneg)
+ * @author Y-M D
+ */
+$messages['br'] = array(
+	'securehtml-form-deprecated' => 'dispredet',
+	'securehtml-form-keyname' => "Anv an alc'hwez (diret)",
+	'securehtml-form-keysecret' => "Alc'hwez sekred",
+	'securehtml-form-submit' => 'Kas',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
