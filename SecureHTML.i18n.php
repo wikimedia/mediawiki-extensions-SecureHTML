@@ -130,6 +130,32 @@ Si aucun nom de clé n’est spécifié, la première clé dans <code>$wgSecureH
 Si le code généré ne fonctionne pas, essayez de supprimer tous les retours à la ligne du HTML d’entrée et générez de nouveau.',
 );
 
+/** Galician (galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'securehtml' => 'HTML seguro',
+	'securehtml-desc' => 'Permite incluír HTML arbitrario dun modo autorizado e seguro',
+	'securehtml-nokeys' => 'Erro: <code>$wgSecureHTMLSecrets</code> non está cheo.',
+	'securehtml-legacykeys' => 'Atención: <code>$wgSecureHTMLSecrets</code> (versión 2) non está cheo, pero <code>$shtml_keys</code> (versión 1) si que o está.
+Por favor, pase á versión 2 os hashes en canto sexa posible, xa que a versión 1 está obsoleta.',
+	'securehtml-invalidhash' => 'Erro: Hash non válido.',
+	'securehtml-invalidversion' => 'Erro: Versión non válida.',
+	'securehtml-input-title' => 'Entrada HTML',
+	'securehtml-generatedoutput-title' => 'Saída xerada',
+	'securehtml-renderedhhtml-title' => 'HTML renderizado',
+	'securehtml-form-version' => 'Versión do hash',
+	'securehtml-form-deprecated' => 'obsoleto',
+	'securehtml-form-keyname' => 'Nome da clave (opcional)',
+	'securehtml-form-keysecret' => 'Clave secreta',
+	'securehtml-form-html' => 'HTML en bruto',
+	'securehtml-form-submit' => 'Enviar',
+	'securehtml-inputinstructions' => 'Insira un nome de clave (opcional), unha clave secreta e o HTML en bruto desexado.
+Se non se especifica un nome, asúmese a primeira clave en <code>$wgSecureHTMLSecrets</code>.',
+	'securehtml-outputinstructions' => 'Copie EXACTAMENTE o código superior e pégueo no editor wiki.
+Se o código xerado non funciona, intente eliminar todos os saltos de liña da entrada HTML e volva xerar o código.',
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
