@@ -105,6 +105,7 @@ $messages['en-gb'] = array(
 );
 
 /** French (français)
+ * @author Boniface
  * @author Gomoko
  */
 $messages['fr'] = array(
@@ -114,7 +115,7 @@ $messages['fr'] = array(
 	'securehtml-legacykeys' => 'Avertissement: <code>$wgSecureHTMLSecrets</code> (version 2) n’est pas renseigné, mais <code>$shtml_keys</code> (version 1) l’est.
 Veuillez faire la conversion vers les hachages de la version 2 dès que possible, car la version 1 est obsolète.',
 	'securehtml-invalidhash' => 'Erreur: Hachage non valide.',
-	'securehtml-invalidversion' => 'Erreur: Version non valide.',
+	'securehtml-invalidversion' => 'Erreur : Version non valide.',
 	'securehtml-input-title' => 'Entrée HTML',
 	'securehtml-generatedoutput-title' => 'Sortie générée',
 	'securehtml-renderedhhtml-title' => 'HTML restitué',
@@ -235,4 +236,12 @@ Schakel zo snel mogelijk over naar hashes van versie 2, versie 1 verouderd is.',
 Als er geen sleutelnaam wordt opgegeven, wordt aangenomen dat de eerste sleutel uit <code>$wgSecureHTMLSecrets</code> moet worden gebruikt.',
 	'securehtml-outputinstructions' => 'Kopieer de bovenstaande code exact en plak deze in de tekstverwerker van de wiki.
 Als de bovenstaande code niet werkt, verwijder dan alle regeleinden van de invoer-HTML en probeer het opnieuw.',
+);
+
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Милан Јелисавчић
+ */
+$messages['sr-ec'] = array(
+	'securehtml-form-deprecated' => 'застарело',
+	'securehtml-form-submit' => 'Пошаљи',
 );
