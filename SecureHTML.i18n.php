@@ -35,7 +35,7 @@ If the generated code does not work, try removing all linefeeds from the input H
  * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'securehtml' => 'The title of Special:SecureHTML; also seen in [[Special:SpecialPages]]',
+	'securehtml' => '{{doc-special|SecureHTML}}',
 	'securehtml-desc' => '{{desc|name=Secure HTML|url=http://www.mediawiki.org/wiki/Extension:SecureHTML}}',
 	'securehtml-nokeys' => '{{doc-important|Do not translate "<code>$wgSecureHTMLSecrets</code>"; is a global variable.}}
 Rendered by the shtml tag when the extension is not configured.',
@@ -244,4 +244,29 @@ Als de bovenstaande code niet werkt, verwijder dan alle regeleinden van de invoe
 $messages['sr-ec'] = array(
 	'securehtml-form-deprecated' => 'застарело',
 	'securehtml-form-submit' => 'Пошаљи',
+);
+
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'securehtml' => 'Ligtas na HTML',
+	'securehtml-desc' => 'Nagpapahintulot sa iyo na magsama ng nagkataong HTML sa isang paraang pinayagan at ligtas',
+	'securehtml-nokeys' => 'Kamalian: hindi naparami ang <code>$wgSecureHTMLSecrets</code>.',
+	'securehtml-legacykeys' => 'Babala: hindi naparami ang <code>$wgSecureHTMLSecrets</code> (ika-2 bersiyon), subalit naparami ang <code>$shtml_keys</code> (unang bersiyon).
+Paki palitan ng ika-2 bersiyon sa lalong madaling panahon, dahil ang unang bersiyon ay itinakwil na.',
+	'securehtml-invalidhash' => "Kamalian: Hindi katanggap-tanggap na kahaluan o ''hash''.",
+	'securehtml-invalidversion' => 'Kamalian: Hindi katanggap-tanggap na bersiyon.',
+	'securehtml-input-title' => 'Paloob na lahok ng HTML',
+	'securehtml-generatedoutput-title' => 'Nagawang kinalabasan',
+	'securehtml-renderedhhtml-title' => 'Naiharap na HTML',
+	'securehtml-form-version' => 'Bersiyon ng kahaluan',
+	'securehtml-form-deprecated' => 'itinakwil',
+	'securehtml-form-keyname' => 'Pangalan ng susi (maaaring wala)',
+	'securehtml-form-keysecret' => 'Susing lihim',
+	'securehtml-form-html' => 'Hilaw ng HTML',
+	'securehtml-form-submit' => 'Ipasa',
+	'securehtml-inputinstructions' => 'Magpasok ng isang pangalan ng susi (maaaring hindi), lihim na susi, at ninanais na hilaw na HTML. Kapag walang tinukoy na pangalan ng susi, ang unang susi na nasa loob ng <code>$wgSecureHTMLSecrets</code> ang ipapalagay.',
+	'securehtml-outputinstructions' => 'Kopyahin nang TUMPAK ang kodigong nasa itaas at idikit iyon sa loob ng patnugot ng wiki.
+Kapag hindi gumana ang nalikhang kodigo, subukang tanggalin ang lahat ng mga pinakain na guhit magmula sa panglahok na HTML at muling likhain.',
 );
