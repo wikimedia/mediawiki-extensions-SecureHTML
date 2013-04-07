@@ -65,6 +65,7 @@ See also:
  * @author Y-M D
  */
 $messages['br'] = array(
+	'securehtml' => 'HTML suraet',
 	'securehtml-form-deprecated' => 'dispredet',
 	'securehtml-form-keyname' => "Anv an alc'hwez (diret)",
 	'securehtml-form-keysecret' => "Alc'hwez sekred",
@@ -102,6 +103,14 @@ Falls der erzeugte Code nicht funktioniert, versuche das Entfernen aller Zeilenv
  */
 $messages['en-gb'] = array(
 	'securehtml-desc' => 'Lets you include arbitrary HTML in an authorised and secure way',
+);
+
+/** Spanish (español)
+ * @author Miguel2706
+ */
+$messages['es'] = array(
+	'securehtml-desc' => 'Permite incluir código HTML de forma autorizada y segura',
+	'securehtml-nokeys' => 'Error: <code>$wgSecureHTMLSecrets</code> no se rellena.',
 );
 
 /** French (français)
