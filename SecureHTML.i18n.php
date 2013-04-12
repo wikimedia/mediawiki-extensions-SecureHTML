@@ -131,6 +131,13 @@ Si no se especifica ningún nombre clave, la primera clave en <code>$wgSecureHTM
 Si el código generado no funciona, intente quitar los saltos de línea de la entrada HTML y vuelva a generar.',
 );
 
+/** Finnish (suomi)
+ * @author Silvonen
+ */
+$messages['fi'] = array(
+	'securehtml-input-title' => 'HTML-syöte',
+);
+
 /** French (français)
  * @author Boniface
  * @author Gomoko
