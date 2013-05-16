@@ -272,6 +272,17 @@ Als er geen sleutelnaam wordt opgegeven, wordt aangenomen dat de eerste sleutel 
 Als de bovenstaande code niet werkt, verwijder dan alle regeleinden van de invoer-HTML en probeer het opnieuw.',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'securehtml' => 'HTML secure',
+	'securehtml-form-deprecated' => 'sconzigliate',
+	'securehtml-form-keysecret' => 'Chiave segrete',
+	'securehtml-form-html' => 'HTML grezze',
+	'securehtml-form-submit' => 'Conferme',
+);
+
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Милан Јелисавчић
  */
