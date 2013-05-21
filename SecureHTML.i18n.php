@@ -315,3 +315,11 @@ Paki palitan ng ika-2 bersiyon sa lalong madaling panahon, dahil ang unang bersi
 	'securehtml-outputinstructions' => 'Kopyahin nang TUMPAK ang kodigong nasa itaas at idikit iyon sa loob ng patnugot ng wiki.
 Kapag hindi gumana ang nalikhang kodigo, subukang tanggalin ang lahat ng mga pinakain na guhit magmula sa panglahok na HTML at muling likhain.',
 );
+
+/** Simplified Chinese (中文（简体）‎)
+ * @author Li3939108
+ */
+$messages['zh-hans'] = array(
+	'securehtml-form-html' => '原始HTML',
+	'securehtml-form-submit' => '提交',
+);
