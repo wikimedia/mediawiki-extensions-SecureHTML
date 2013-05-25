@@ -218,6 +218,7 @@ $messages['ja'] = array(
 $messages['lb'] = array(
 	'securehtml' => 'Sécheren HTML',
 	'securehtml-invalidversion' => 'Feeler: Net valabel Versioun',
+	'securehtml-form-deprecated' => 'vereelst',
 );
 
 /** Macedonian (македонски)
