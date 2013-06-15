@@ -217,8 +217,11 @@ $messages['ja'] = array(
  */
 $messages['lb'] = array(
 	'securehtml' => 'Sécheren HTML',
+	'securehtml-nokeys' => 'Feeler: <code>$wgSecureHTMLSecrets</code> ass net ausgefëllt.',
 	'securehtml-invalidversion' => 'Feeler: Net valabel Versioun',
 	'securehtml-form-deprecated' => 'vereelst',
+	'securehtml-form-keyname' => 'Numm vum Schlëssel (fakultativ)',
+	'securehtml-form-keysecret' => 'Geheime Schlëssel',
 );
 
 /** Macedonian (македонски)
