@@ -61,6 +61,32 @@ See also:
 	'securehtml-outputinstructions' => 'Special:SecureHTML: Instructions using the output returned by filling in the input form.',
 );
 
+/** Asturian (asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'securehtml' => 'HTML seguru',
+	'securehtml-desc' => "Permite incluir HTML arbitrariu d'una manera autorizada y segura",
+	'securehtml-nokeys' => 'Error: <code>$wgSecureHTMLSecrets</code> nun ta configurada.',
+	'securehtml-legacykeys' => 'Avisu: <code> $wgSecureHTMLSecrets </code> (versión 2) nun ta configuráu, pero <code>$shtml_keys</code> (versión 1) si.
+Por favor, convertir los hashes a la versión 2 lo antes posible, porque la versión 1 ta anticuada.',
+	'securehtml-invalidhash' => 'Error: hash inválidu.',
+	'securehtml-invalidversion' => 'Error: Versión inválida.',
+	'securehtml-input-title' => 'Entrada HTML',
+	'securehtml-generatedoutput-title' => 'Salida xenerada',
+	'securehtml-renderedhhtml-title' => 'HTML presentáu',
+	'securehtml-form-version' => 'Versión del hash',
+	'securehtml-form-deprecated' => 'En desusu',
+	'securehtml-form-keyname' => 'Nome de la clave (opcional)',
+	'securehtml-form-keysecret' => 'Secretu de clave',
+	'securehtml-form-html' => 'HTML en bruto',
+	'securehtml-form-submit' => 'Unviar',
+	'securehtml-inputinstructions' => 'Escriba un nome de clave (opcional), un secretu de clave, ya\'l HTML en bruto deseáu.
+Si nun se da un nome de clave, asumirá la primera de <code>$wgSecureHTMLSecrets</code>.',
+	'securehtml-outputinstructions' => "Copie'l códigu d'arriba EXACTAMENTE y apéguelu nel editor wiki.
+Si¡l códigu xeneráu nun funciona, intente quitar tolos saltos de llinia de la entrada HTML y rexenérelu.",
+);
+
 /** Breton (brezhoneg)
  * @author Y-M D
  */
