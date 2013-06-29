@@ -243,6 +243,7 @@ $messages['ja'] = array(
  */
 $messages['lb'] = array(
 	'securehtml' => 'Sécheren HTML',
+	'securehtml-desc' => 'Léisst Iech arbiträren HTML op eng autoriséiert a sécher Manéier abauen',
 	'securehtml-nokeys' => 'Feeler: <code>$wgSecureHTMLSecrets</code> ass net ausgefëllt.',
 	'securehtml-invalidversion' => 'Feeler: Net valabel Versioun',
 	'securehtml-form-deprecated' => 'vereelst',
