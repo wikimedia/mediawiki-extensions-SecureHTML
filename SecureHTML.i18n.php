@@ -322,6 +322,19 @@ $messages['sr-ec'] = array(
 	'securehtml-form-submit' => 'Пошаљи',
 );
 
+/** Swedish (svenska)
+ * @author WikiPhoenix
+ */
+$messages['sv'] = array(
+	'securehtml' => 'Säker HTML',
+	'securehtml-renderedhhtml-title' => 'Renderad HTML',
+	'securehtml-form-version' => 'Hash-version',
+	'securehtml-form-keyname' => 'Nyckelnamn (valfritt)',
+	'securehtml-form-keysecret' => 'Nyckelhemlighet',
+	'securehtml-form-html' => 'Rå HTML',
+	'securehtml-form-submit' => 'Skicka',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
