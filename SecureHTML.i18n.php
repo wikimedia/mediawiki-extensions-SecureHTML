@@ -303,6 +303,13 @@ Als er geen sleutelnaam wordt opgegeven, wordt aangenomen dat de eerste sleutel 
 Als de bovenstaande code niet werkt, verwijder dan alle regeleinden van de invoer-HTML en probeer het opnieuw.',
 );
 
+/** Polish (polski)
+ * @author Chrumps
+ */
+$messages['pl'] = array(
+	'securehtml-form-submit' => 'Wyślij',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
