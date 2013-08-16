@@ -367,6 +367,32 @@ Paki palitan ng ika-2 bersiyon sa lalong madaling panahon, dahil ang unang bersi
 Kapag hindi gumana ang nalikhang kodigo, subukang tanggalin ang lahat ng mga pinakain na guhit magmula sa panglahok na HTML at muling likhain.',
 );
 
+/** Ukrainian (українська)
+ * @author Andriykopanytsia
+ */
+$messages['uk'] = array(
+	'securehtml' => 'Безпечний HTML',
+	'securehtml-desc' => 'Дає змогу включати довільний HTML в уповноважений і безпечний спосіб',
+	'securehtml-nokeys' => 'Помилка: <code>$wgSecureHTMLSecrets</code> не заповнюється.',
+	'securehtml-legacykeys' => 'Попередження: <code>$wgSecureHTMLSecrets</code> (версія 2) не заповнений, але <code>$shtml_keys</code> (версія 1) наявний.
+Будь ласка, конвертуйте у геші версії 2 якомога швидше, бо версія 1 - застаріла.',
+	'securehtml-invalidhash' => 'Помилка: Неправильний геш.',
+	'securehtml-invalidversion' => 'Помилка: неприпустима версія.',
+	'securehtml-input-title' => 'Дані HTML',
+	'securehtml-generatedoutput-title' => 'Згенерований вивід',
+	'securehtml-renderedhhtml-title' => 'Опрацьована HTML',
+	'securehtml-form-version' => 'Геш-версія',
+	'securehtml-form-deprecated' => 'застарілий',
+	'securehtml-form-keyname' => "Ім'я ключа (необов'язково)",
+	'securehtml-form-keysecret' => 'Секретний ключ',
+	'securehtml-form-html' => 'Чисте HTML',
+	'securehtml-form-submit' => 'Відправити',
+	'securehtml-inputinstructions' => "Введіть ім'я (необов'язково), секретний ключ, необхідний вихідний HTML-код.
+Якщо ім'я ключа не вказано, перший ключ у <code>\$wgSecureHTMLSecrets</code> буде прийнятий.",
+	'securehtml-outputinstructions' => 'Скопіюйте код, наведений вище, ТОЧНО і вставте його в вікі-редактор.
+Якщо згенерований код не працює, то спробуйте видалити всі символи переносу рядків з вхідного HTML і повторно згенерувати.',
+);
+
 /** Simplified Chinese (中文（简体）‎)
  * @author Li3939108
  */
