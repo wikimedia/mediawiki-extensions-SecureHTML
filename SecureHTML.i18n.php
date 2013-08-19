@@ -315,7 +315,16 @@ $messages['pl'] = array(
  */
 $messages['roa-tara'] = array(
 	'securehtml' => 'HTML secure',
+	'securehtml-desc' => "Te lasse 'ngludere HTML aribtrarie jndr'à 'nu mode secure e autorizzate",
+	'securehtml-nokeys' => 'Errore: <code>$wgSecureHTMLSecrets</code> non g\'ha state anghiute.',
+	'securehtml-invalidhash' => 'Errore: Hash invalide.',
+	'securehtml-invalidversion' => 'Errore: Versione invalide.',
+	'securehtml-input-title' => 'HTML de ingresse',
+	'securehtml-generatedoutput-title' => 'Resultate generate',
+	'securehtml-renderedhhtml-title' => 'HTML renderizzate',
+	'securehtml-form-version' => "Versione de l'hash",
 	'securehtml-form-deprecated' => 'sconzigliate',
+	'securehtml-form-keyname' => "Nome d'a chiave (opzionale)",
 	'securehtml-form-keysecret' => 'Chiave segrete',
 	'securehtml-form-html' => 'HTML grezze',
 	'securehtml-form-submit' => 'Conferme',
