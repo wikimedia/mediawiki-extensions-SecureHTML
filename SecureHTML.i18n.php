@@ -310,6 +310,13 @@ $messages['pl'] = array(
 	'securehtml-form-submit' => 'Wyślij',
 );
 
+/** Brazilian Portuguese (português do Brasil)
+ * @author Fúlvio
+ */
+$messages['pt-br'] = array(
+	'securehtml' => 'HTML seguro',
+);
+
 /** tarandíne (tarandíne)
  * @author Joetaras
  */
@@ -317,6 +324,8 @@ $messages['roa-tara'] = array(
 	'securehtml' => 'HTML secure',
 	'securehtml-desc' => "Te lasse 'ngludere HTML aribtrarie jndr'à 'nu mode secure e autorizzate",
 	'securehtml-nokeys' => 'Errore: <code>$wgSecureHTMLSecrets</code> non g\'ha state anghiute.',
+	'securehtml-legacykeys' => "Attenziò: <code>\$wgSecureHTMLSecrets</code> (versione 2) non g'è popolate, ma <code>\$shtml_keys</code> (versione 1) sìne.
+Pe piacere converte jndr'à versione 2 le hash subbete subbete, purcé 'a versione 1 jè sconsigliate.",
 	'securehtml-invalidhash' => 'Errore: Hash invalide.',
 	'securehtml-invalidversion' => 'Errore: Versione invalide.',
 	'securehtml-input-title' => 'HTML de ingresse',
@@ -328,6 +337,10 @@ $messages['roa-tara'] = array(
 	'securehtml-form-keysecret' => 'Chiave segrete',
 	'securehtml-form-html' => 'HTML grezze',
 	'securehtml-form-submit' => 'Conferme',
+	'securehtml-inputinstructions' => "Mitte 'nu nome d'a chiave (facoltative), segrete d'a chiave, e l'HTML grezze desiderate.
+Ce non ge stè 'u nome d'a chiave specificate, 'a prima chiave jndr'à <code>\$wgSecureHTMLSecrets</code> avène pigghiate.",
+	'securehtml-outputinstructions' => "Copie 'u codice de sus SATTE SATTE e 'ngollale jndr'à 'u cangiatore de uicchi.
+Ce 'u codece generate non ge funzione, pruève a luà tutte le linèe da l'HTML de ingresse e riggenere.",
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
