@@ -303,6 +303,30 @@ Als er geen sleutelnaam wordt opgegeven, wordt aangenomen dat de eerste sleutel 
 Als de bovenstaande code niet werkt, verwijder dan alle regeleinden van de invoer-HTML en probeer het opnieuw.',
 );
 
+/** Occitan (occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'securehtml' => 'HTML securizat',
+	'securehtml-desc' => 'Vos permet d’inclure de còde HTML arbitrari dins un quadre autorizat e securizat',
+	'securehtml-nokeys' => 'Error : <code>$wgSecureHTMLSecrets</code> es pas completat.',
+	'securehtml-legacykeys' => 'Avertiment : <code>$wgSecureHTMLSecrets</code> (version 2) es pas completat, mas <code>$shtml_keys</code> (version 1) l’es.
+Fasètz la conversion cap als hachages de la version 2 tre que possible, perque la version 1 es obsoleta.',
+	'securehtml-invalidhash' => 'Error : Hachage invalid.',
+	'securehtml-invalidversion' => 'Error : Version invalida.',
+	'securehtml-input-title' => 'Entrada HTML',
+	'securehtml-generatedoutput-title' => 'Sortida generada',
+	'securehtml-renderedhhtml-title' => 'HTML restituit',
+	'securehtml-form-version' => 'Version de hachage',
+	'securehtml-form-deprecated' => 'Obsolet',
+	'securehtml-form-keyname' => 'Nom de la clau (facultatiu)',
+	'securehtml-form-keysecret' => 'Clau secreta',
+	'securehtml-form-html' => 'HTML brut',
+	'securehtml-form-submit' => 'Mandar',
+	'securehtml-inputinstructions' => 'Entratz un nom de clau (facultatiu), una clau secreta, e lo HTML brut desirat.
+Se cap de nom de clau es pas especificat, la primièra clau dins <code>$wgSecureHTMLSecrets</code> serà presa per defaut.',
+);
+
 /** Polish (polski)
  * @author Chrumps
  */
