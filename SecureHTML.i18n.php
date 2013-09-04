@@ -217,6 +217,27 @@ Se non se especifica un nome, asúmese a primeira clave en <code>$wgSecureHTMLSe
 Se o código xerado non funciona, intente eliminar todos os saltos de liña da entrada HTML e volva xerar o código.',
 );
 
+/** Italian (italiano)
+ * @author Gianfranco
+ */
+$messages['it'] = array(
+	'securehtml' => 'HTML sicuro',
+	'securehtml-desc' => 'Consente di includere HTML arbitrario in modo sicuro e autorizzato',
+	'securehtml-nokeys' => 'Errore: <code>$wgSecureHTMLSecrets</code> non è definito.',
+	'securehtml-invalidhash' => 'Errore: Hash non valido.',
+	'securehtml-invalidversion' => 'Errore: Versione non valida.',
+	'securehtml-input-title' => 'Input HTML',
+	'securehtml-generatedoutput-title' => 'Output generato',
+	'securehtml-renderedhhtml-title' => 'HTML Renderizzato',
+	'securehtml-form-version' => 'Versione hash',
+	'securehtml-form-deprecated' => 'deprecato',
+	'securehtml-form-keyname' => 'Nome della chiave (facoltativo)',
+	'securehtml-form-html' => 'HTML grezzo',
+	'securehtml-form-submit' => 'Invia',
+	'securehtml-outputinstructions' => "Copia il codice sopra riportato ESATTAMENTE COME LO VEDI e incollalo nell'editor wiki.
+Se il codice generato non funziona, prova a rimuovere tutte le andate a capo dall'input HTML e ri-generalo.",
+);
+
 /** Japanese (日本語)
  * @author Shirayuki
  */
@@ -331,6 +352,12 @@ Se cap de nom de clau es pas especificat, la primièra clau dins <code>$wgSecure
  * @author Chrumps
  */
 $messages['pl'] = array(
+	'securehtml-invalidversion' => 'Błąd: Nieprawidłowa wersja.',
+	'securehtml-renderedhhtml-title' => 'Wyrenderowany HTML',
+	'securehtml-form-deprecated' => 'przestarzałe',
+	'securehtml-form-keyname' => 'Nazwa klucza (opcjonalnie)',
+	'securehtml-form-keysecret' => 'Tajny klucz',
+	'securehtml-form-html' => 'Surowy HTML',
 	'securehtml-form-submit' => 'Wyślij',
 );
 
