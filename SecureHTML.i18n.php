@@ -413,6 +413,15 @@ Ce non ge stè 'u nome d'a chiave specificate, 'a prima chiave jndr'à <code>\$w
 Ce 'u codece generate non ge funzione, pruève a luà tutte le linèe da l'HTML de ingresse e riggenere.",
 );
 
+/** Russian (русский)
+ * @author Okras
+ */
+$messages['ru'] = array(
+	'securehtml' => 'Безопасный HTML',
+	'securehtml-desc' => 'Позволяет включать произвольный HTML разрешённым и безопасным способом',
+	'securehtml-form-submit' => 'Отправить',
+);
+
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Милан Јелисавчић
  */
