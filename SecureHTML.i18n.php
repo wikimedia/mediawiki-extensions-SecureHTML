@@ -132,6 +132,7 @@ $messages['en-gb'] = array(
 );
 
 /** Spanish (español)
+ * @author Fitoschido
  * @author Miguel2706
  */
 $messages['es'] = array(
@@ -144,12 +145,12 @@ Por favor, convertir los hashes a la versión 2 lo antes posible, ya que la vers
 	'securehtml-invalidversion' => 'Error: Versión no válida.',
 	'securehtml-input-title' => 'Entrada HTML',
 	'securehtml-generatedoutput-title' => 'Salida generada',
-	'securehtml-renderedhhtml-title' => 'HTML Renderizado',
+	'securehtml-renderedhhtml-title' => 'HTML procesado',
 	'securehtml-form-version' => 'Versión de hash',
 	'securehtml-form-deprecated' => 'En desuso',
 	'securehtml-form-keyname' => 'Nombre de la clave (opcional)',
 	'securehtml-form-keysecret' => 'Clave secreta',
-	'securehtml-form-html' => 'HTML sin editar',
+	'securehtml-form-html' => 'HTML sin procesar',
 	'securehtml-form-submit' => 'Enviar',
 	'securehtml-inputinstructions' => 'Introduzca un nombre clave (opcional), clave secreta y el HTML deseado.
 Si no se especifica ningún nombre clave, la primera clave en <code>$wgSecureHTMLSecrets</code> será asumida.',
