@@ -219,12 +219,15 @@ Se o código xerado non funciona, intente eliminar todos os saltos de liña da e
 );
 
 /** Italian (italiano)
+ * @author Beta16
  * @author Gianfranco
  */
 $messages['it'] = array(
 	'securehtml' => 'HTML sicuro',
 	'securehtml-desc' => 'Consente di includere HTML arbitrario in modo sicuro e autorizzato',
 	'securehtml-nokeys' => 'Errore: <code>$wgSecureHTMLSecrets</code> non è definito.',
+	'securehtml-legacykeys' => 'Attenzione: <code>$wgSecureHTMLSecrets</code> (versione 2) non è valorizzato, ma <code>$shtml_keys</code> (versione 1) lo è.
+Converti gli hash alla versione 2 il prima possibile, poiché la versione 1 è deprecata.',
 	'securehtml-invalidhash' => 'Errore: Hash non valido.',
 	'securehtml-invalidversion' => 'Errore: Versione non valida.',
 	'securehtml-input-title' => 'Input HTML',
@@ -233,8 +236,11 @@ $messages['it'] = array(
 	'securehtml-form-version' => 'Versione hash',
 	'securehtml-form-deprecated' => 'deprecato',
 	'securehtml-form-keyname' => 'Nome della chiave (facoltativo)',
+	'securehtml-form-keysecret' => 'Chiave segreta',
 	'securehtml-form-html' => 'HTML grezzo',
 	'securehtml-form-submit' => 'Invia',
+	'securehtml-inputinstructions' => 'Inserisci il nome della chiave (facoltativo), la chiave segreta, ed il codice HTML desiderato.
+Se nessun nome viene specificato per la chiave, verrà assunta la prima in <code>$wgSecureHTMLSecrets</code>.',
 	'securehtml-outputinstructions' => "Copia il codice sopra riportato ESATTAMENTE COME LO VEDI e incollalo nell'editor wiki.
 Se il codice generato non funziona, prova a rimuovere tutte le andate a capo dall'input HTML e ri-generalo.",
 );
