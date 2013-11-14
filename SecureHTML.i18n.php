@@ -98,6 +98,13 @@ $messages['br'] = array(
 	'securehtml-form-submit' => 'Kas',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'securehtml-form-submit' => 'ДӀадахьийта',
+);
+
 /** German (Deutsch)
  * @author Metalhead64
  */
