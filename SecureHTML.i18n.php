@@ -529,8 +529,21 @@ $messages['uk'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Li3939108
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
+	'securehtml' => '安全的HTML',
+	'securehtml-desc' => '允许您在经授权和安全的方式中包含任意HTML',
+	'securehtml-nokeys' => '错误：<code>$wgSecureHTMLSecrets</code>未填写。',
+	'securehtml-invalidhash' => '错误：无效的哈希值。',
+	'securehtml-invalidversion' => '错误：无效的版本。',
+	'securehtml-input-title' => 'HTML输入',
+	'securehtml-generatedoutput-title' => '生成的输出',
+	'securehtml-renderedhhtml-title' => '呈现的HTML',
+	'securehtml-form-version' => '哈希值版本',
+	'securehtml-form-deprecated' => '不推荐使用',
+	'securehtml-form-keyname' => '键值名称（可选）',
+	'securehtml-form-keysecret' => '密钥',
 	'securehtml-form-html' => '原始HTML',
 	'securehtml-form-submit' => '提交',
 );
