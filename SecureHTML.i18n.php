@@ -165,6 +165,13 @@ Si no se especifica ningún nombre clave, la primera clave en <code>$wgSecureHTM
 Si el código generado no funciona, intente quitar los saltos de línea de la entrada HTML y vuelva a generar.',
 );
 
+/** Persian (فارسی)
+ * @author Reza1615
+ */
+$messages['fa'] = array(
+	'securehtml-form-submit' => 'ثبت',
+);
+
 /** Finnish (suomi)
  * @author Silvonen
  */
