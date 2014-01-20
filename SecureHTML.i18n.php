@@ -280,6 +280,24 @@ $messages['ja'] = array(
 	'securehtml-form-submit' => '送信',
 );
 
+/** Korean (한국어)
+ * @author Priviet
+ */
+$messages['ko'] = array(
+	'securehtml' => '보안 HTML',
+	'securehtml-invalidhash' => '오류: 유효하지 않은 해시',
+	'securehtml-invalidversion' => '오류: 유효하지 않은 버전.',
+	'securehtml-input-title' => 'HTML 입력',
+	'securehtml-generatedoutput-title' => '생성된 결과물',
+	'securehtml-renderedhhtml-title' => '표시된 HTML',
+	'securehtml-form-version' => '해시 버전',
+	'securehtml-form-deprecated' => '사용되지 않음',
+	'securehtml-form-keyname' => '키 이름(선택 사항)',
+	'securehtml-form-keysecret' => '키 시크릿',
+	'securehtml-form-html' => 'HTML 코드',
+	'securehtml-form-submit' => '제출하기',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
