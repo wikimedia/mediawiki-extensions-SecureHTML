@@ -166,9 +166,15 @@ Si el código generado no funciona, intente quitar los saltos de línea de la en
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Reza1615
  */
 $messages['fa'] = array(
+	'securehtml-invalidversion' => 'خطا: نسخهٔ نامعتبر.',
+	'securehtml-input-title' => 'ورودی اچ‌تی‌ام‌ال',
+	'securehtml-generatedoutput-title' => 'خروجی تولید شده',
+	'securehtml-form-keyname' => 'نام کلید (اختیاری)',
+	'securehtml-form-keysecret' => 'کلید مخفی',
 	'securehtml-form-submit' => 'ثبت',
 );
 
