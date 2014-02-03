@@ -170,6 +170,7 @@ Si el código generado no funciona, intente quitar los saltos de línea de la en
  * @author Reza1615
  */
 $messages['fa'] = array(
+	'securehtml' => 'ایمن کردن اچ‌تی‌ام‌ال',
 	'securehtml-invalidversion' => 'خطا: نسخهٔ نامعتبر.',
 	'securehtml-input-title' => 'ورودی اچ‌تی‌ام‌ال',
 	'securehtml-generatedoutput-title' => 'خروجی تولید شده',
