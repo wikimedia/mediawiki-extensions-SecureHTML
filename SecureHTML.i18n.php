@@ -568,12 +568,14 @@ $messages['uk'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Li3939108
+ * @author Liuxinyu970226
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
 	'securehtml' => '安全的HTML',
 	'securehtml-desc' => '允许您在经授权和安全的方式中包含任意HTML',
 	'securehtml-nokeys' => '错误：<code>$wgSecureHTMLSecrets</code>未填写。',
+	'securehtml-legacykeys' => '警告：<code>$wgSecureHTMLSecrets</code>（版本2）不可填充，但<code>$shtml_keys</code>（版本1）可填充。如果可能请转换至版本2的哈希值，因为版本1已弃用。',
 	'securehtml-invalidhash' => '错误：无效的哈希值。',
 	'securehtml-invalidversion' => '错误：无效的版本。',
 	'securehtml-input-title' => 'HTML输入',
@@ -583,6 +585,27 @@ $messages['zh-hans'] = array(
 	'securehtml-form-deprecated' => '不推荐使用',
 	'securehtml-form-keyname' => '键值名称（可选）',
 	'securehtml-form-keysecret' => '密钥',
+	'securehtml-form-html' => '原始HTML',
+	'securehtml-form-submit' => '提交',
+	'securehtml-inputinstructions' => '输入密钥名（可选）、密钥代码和所需的原始HTML。如果没有指定密钥名，则将假定第一密钥是<code>$wgSecureHTMLSecrets</code>。',
+	'securehtml-outputinstructions' => '完全复制上面代码并将之粘贴于wiki编辑器。如果生成代码不工作，请尝试从载入的HTML中移除所有换行符并重新生成。',
+);
+
+/** Traditional Chinese (中文（繁體）‎)
+ * @author Liuxinyu970226
+ */
+$messages['zh-hant'] = array(
+	'securehtml' => '安全HTML',
+	'securehtml-nokeys' => '錯誤：<code>$wgSecureHTMLSecrets</code>不能填充。',
+	'securehtml-invalidhash' => '錯誤：無效哈希。',
+	'securehtml-invalidversion' => '錯誤：無效版本。',
+	'securehtml-input-title' => 'HTML鍵入',
+	'securehtml-generatedoutput-title' => '已生成輸出',
+	'securehtml-renderedhhtml-title' => '呈現HTML',
+	'securehtml-form-version' => '哈希版本',
+	'securehtml-form-deprecated' => '不推薦使用',
+	'securehtml-form-keyname' => '密匙名（可選）',
+	'securehtml-form-keysecret' => '密匙位元',
 	'securehtml-form-html' => '原始HTML',
 	'securehtml-form-submit' => '提交',
 );
