@@ -171,11 +171,16 @@ Si el código generado no funciona, intente quitar los saltos de línea de la en
  */
 $messages['fa'] = array(
 	'securehtml' => 'ایمن کردن اچ‌تی‌ام‌ال',
+	'securehtml-invalidhash' => 'خطا: هش نامعتبر.',
 	'securehtml-invalidversion' => 'خطا: نسخهٔ نامعتبر.',
 	'securehtml-input-title' => 'ورودی اچ‌تی‌ام‌ال',
 	'securehtml-generatedoutput-title' => 'خروجی تولید شده',
+	'securehtml-renderedhhtml-title' => 'ارائهٔ اچ‌تی‌ام‌ال',
+	'securehtml-form-version' => 'نسخهٔ هش',
+	'securehtml-form-deprecated' => 'اعتراض',
 	'securehtml-form-keyname' => 'نام کلید (اختیاری)',
 	'securehtml-form-keysecret' => 'کلید مخفی',
+	'securehtml-form-html' => 'اچ‌تی‌ام‌ال خام',
 	'securehtml-form-submit' => 'ثبت',
 );
 
