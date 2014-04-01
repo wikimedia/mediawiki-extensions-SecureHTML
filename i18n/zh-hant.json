@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Liuxinyu970226"
+        ]
+    },
+    "securehtml": "安全HTML",
+    "securehtml-nokeys": "錯誤：<code>$wgSecureHTMLSecrets</code>不能填充。",
+    "securehtml-invalidhash": "錯誤：無效哈希。",
+    "securehtml-invalidversion": "錯誤：無效版本。",
+    "securehtml-input-title": "HTML鍵入",
+    "securehtml-generatedoutput-title": "已生成輸出",
+    "securehtml-renderedhhtml-title": "呈現HTML",
+    "securehtml-form-version": "哈希版本",
+    "securehtml-form-deprecated": "不推薦使用",
+    "securehtml-form-keyname": "密匙名（可選）",
+    "securehtml-form-keysecret": "密匙位元",
+    "securehtml-form-html": "原始HTML",
+    "securehtml-form-submit": "提交"
+}

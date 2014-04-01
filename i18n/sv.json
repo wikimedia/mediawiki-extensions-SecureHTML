@@ -1,0 +1,14 @@
+{
+    "@metadata": {
+        "authors": [
+            "WikiPhoenix"
+        ]
+    },
+    "securehtml": "Säker HTML",
+    "securehtml-renderedhhtml-title": "Renderad HTML",
+    "securehtml-form-version": "Hash-version",
+    "securehtml-form-keyname": "Nyckelnamn (valfritt)",
+    "securehtml-form-keysecret": "Nyckelhemlighet",
+    "securehtml-form-html": "Rå HTML",
+    "securehtml-form-submit": "Skicka"
+}

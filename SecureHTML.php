@@ -39,7 +39,7 @@ $wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = arr
 	'author' => 'Ryan Finnie',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Secure_HTML',
 	'descriptionmsg' => 'securehtml-desc',
-	'version' => '2.2.3',
+	'version' => '2.3.0',
 );
 
 # Default configuration globals
@@ -58,6 +58,7 @@ $wgSpecialPages['SecureHTML'] = 'SpecialSecureHTML';
 $wgSpecialPageGroups['SecureHTML'] = 'wiki';
 
 # Define internationalizations
+$wgMessagesDirs['SecureHTML'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SecureHTML'] = $dir . 'SecureHTML.i18n.php';
 $wgExtensionMessagesFiles['SecureHTMLAlias'] = $dir . 'SecureHTML.alias.php';
 
