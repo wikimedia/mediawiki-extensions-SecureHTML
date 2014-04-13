@@ -46,6 +46,9 @@ $wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = arr
 if ( !isset( $wgSecureHTMLSecrets ) ) {
 	$wgSecureHTMLSecrets = array();
 }
+if ( !isset( $shtml_keys ) ) {
+	$shtml_keys = array();
+}
 if ( !isset( $wgSecureHTMLSpecialRight ) ) {
 	$wgSecureHTMLSpecialRight = 'edit';
 }
@@ -74,6 +77,10 @@ function secureHTMLRender( $input, $argv ) {
 	global $wgSecureHTMLSecrets;
 	global $shtml_keys;
 
+	if ( !isset( $argv['version'] ) ) {
+		$argv['version'] = '1';
+	}
+
 	if ( $argv['version'] == '2' ) {
 		# If the array is empty, there is no possible way this will work.
 		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
@@ -84,14 +91,14 @@ function secureHTMLRender( $input, $argv ) {
 		$keynames = array_keys( $wgSecureHTMLSecrets );
 
 		# If the desired key name is not available, assume the first one.
-		$keyname = ( $argv['keyname'] ? $argv['keyname'] : $keynames[0] );
+		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
 		# The key secret.
 		$keysecret = $wgSecureHTMLSecrets[$keyname];
 
 		# Compute a test hash.
 		$testhash = hash_hmac( 'sha256', $input, $keysecret );
-	} elseif ( !$argv['version'] || ( $argv['version'] == '1' ) ) {
+	} elseif ( $argv['version'] == '1' ) {
 		# Version 1 is deprecated and will be removed at a future date.
 		# Please be sure to migrate Version 1 snippets to Version 2.
 
@@ -104,7 +111,7 @@ function secureHTMLRender( $input, $argv ) {
 		$keynames = array_keys( $shtml_keys );
 
 		# If the desired key name is not available, assume the first one.
-		$keyname = ( $argv['keyname'] ? $argv['keyname'] : $keynames[0] );
+		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
 		# The key secret.
 		$keysecret = $shtml_keys[$keyname];
