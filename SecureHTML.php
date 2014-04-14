@@ -39,7 +39,7 @@ $wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = arr
 	'author' => 'Ryan Finnie',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Secure_HTML',
 	'descriptionmsg' => 'securehtml-desc',
-	'version' => '2.3.0',
+	'version' => '2.4.1',
 );
 
 # Default configuration globals
