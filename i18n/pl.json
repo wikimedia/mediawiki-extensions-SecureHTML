@@ -1,14 +1,14 @@
 {
-    "@metadata": {
-        "authors": [
-            "Chrumps"
-        ]
-    },
-    "securehtml-invalidversion": "Błąd: Nieprawidłowa wersja.",
-    "securehtml-renderedhhtml-title": "Wyrenderowany HTML",
-    "securehtml-form-deprecated": "przestarzałe",
-    "securehtml-form-keyname": "Nazwa klucza (opcjonalnie)",
-    "securehtml-form-keysecret": "Tajny klucz",
-    "securehtml-form-html": "Surowy HTML",
-    "securehtml-form-submit": "Wyślij"
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"securehtml-invalidversion": "Błąd: Nieprawidłowa wersja.",
+	"securehtml-renderedhhtml-title": "Wyrenderowany HTML",
+	"securehtml-form-deprecated": "przestarzałe",
+	"securehtml-form-keyname": "Nazwa klucza (opcjonalnie)",
+	"securehtml-form-keysecret": "Tajny klucz",
+	"securehtml-form-html": "Surowy HTML",
+	"securehtml-form-submit": "Wyślij"
 }

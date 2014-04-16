@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Милан Јелисавчић"
-        ]
-    },
-    "securehtml-form-deprecated": "застарело",
-    "securehtml-form-submit": "Пошаљи"
+	"@metadata": {
+		"authors": [
+			"Милан Јелисавчић"
+		]
+	},
+	"securehtml-form-deprecated": "застарело",
+	"securehtml-form-submit": "Пошаљи"
 }
