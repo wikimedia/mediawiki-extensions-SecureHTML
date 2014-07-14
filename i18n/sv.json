@@ -1,14 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Lokal Profil"
 		]
 	},
 	"securehtml": "Säker HTML",
+	"securehtml-desc": "Låter dig inkludera godtycklig HTML på ett auktoriserat och säkert sätt",
+	"securehtml-nokeys": "Fel: <code>$wgSecureHTMLSecrets</code> är inte ifyllt.",
+	"securehtml-legacykeys": "Varning: <code>$wgSecureHTMLSecrets</code> (version 2) är inte ifyllt, men <code>$shtml_keys</code> (version 1) är det. Konvertera till version 2-hashar så fort som möjligt då version 1 är föråldrat.",
+	"securehtml-invalidhash": "Fel: Ogiltig hash.",
+	"securehtml-invalidversion": "Fel: Ogiltig version.",
+	"securehtml-input-title": "HTML-indata",
+	"securehtml-generatedoutput-title": "Genererad utdata",
 	"securehtml-renderedhhtml-title": "Renderad HTML",
 	"securehtml-form-version": "Hash-version",
+	"securehtml-form-deprecated": "föråldrad",
 	"securehtml-form-keyname": "Nyckelnamn (valfritt)",
 	"securehtml-form-keysecret": "Nyckelhemlighet",
 	"securehtml-form-html": "Rå HTML",
-	"securehtml-form-submit": "Skicka"
+	"securehtml-form-submit": "Skicka",
+	"securehtml-inputinstructions": "Ange ett nyckelnamn (valfritt), nyckel-hemlighet, och önskad rå HTML.\nOm inget nyckelnamn anges, kommer den första nyckeln i <code>$wgSecureHTMLSecrets</code> att antas.",
+	"securehtml-outputinstructions": "Kopiera koden ovan EXAKT och klistra in wiki-redigeraren.\nOm den genererade koden inte fungerar, prova att ta bort alla radbrytningar från HTML-indatat och generera igen."
 }
