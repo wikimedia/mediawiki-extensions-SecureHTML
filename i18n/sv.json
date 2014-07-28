@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Lokal Profil"
+			"Lokal Profil",
+			"Jopparn"
 		]
 	},
 	"securehtml": "Säker HTML",
@@ -21,5 +22,5 @@
 	"securehtml-form-html": "Rå HTML",
 	"securehtml-form-submit": "Skicka",
 	"securehtml-inputinstructions": "Ange ett nyckelnamn (valfritt), nyckel-hemlighet, och önskad rå HTML.\nOm inget nyckelnamn anges, kommer den första nyckeln i <code>$wgSecureHTMLSecrets</code> att antas.",
-	"securehtml-outputinstructions": "Kopiera koden ovan EXAKT och klistra in wiki-redigeraren.\nOm den genererade koden inte fungerar, prova att ta bort alla radbrytningar från HTML-indatat och generera igen."
+	"securehtml-outputinstructions": "Kopiera koden ovan EXAKT och klistra in i wiki-redigeraren.\nOm den genererade koden inte fungerar, prova att ta bort alla radbrytningar från HTML-indatat och generera igen."
 }
