@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Alan ffm"
 		]
 	},
+	"securehtml": "Bezpieczny HTML",
 	"securehtml-invalidversion": "Błąd: Nieprawidłowa wersja.",
 	"securehtml-renderedhhtml-title": "Wyrenderowany HTML",
 	"securehtml-form-deprecated": "przestarzałe",
