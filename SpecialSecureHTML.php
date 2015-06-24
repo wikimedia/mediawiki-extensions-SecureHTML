@@ -92,4 +92,7 @@ class SpecialSecureHTML extends SpecialPage {
 		$output->addHTML( '</form>' . "\n" );
 	}
 
+	protected function getGroupName() {
+		return 'wiki';
+	}
 }

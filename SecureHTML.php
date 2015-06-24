@@ -58,7 +58,6 @@ $dir = dirname( __FILE__ ) . '/';
 # Define Special page
 $wgAutoloadClasses['SpecialSecureHTML'] = $dir . 'SpecialSecureHTML.php';
 $wgSpecialPages['SecureHTML'] = 'SpecialSecureHTML';
-$wgSpecialPageGroups['SecureHTML'] = 'wiki';
 
 # Define internationalizations
 $wgMessagesDirs['SecureHTML'] = __DIR__ . '/i18n';
