@@ -3,7 +3,8 @@
 		"authors": [
 			"Li3939108",
 			"Liuxinyu970226",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Arthur2e5"
 		]
 	},
 	"securehtml": "安全的HTML",
@@ -16,7 +17,7 @@
 	"securehtml-generatedoutput-title": "生成的输出",
 	"securehtml-renderedhhtml-title": "呈现的HTML",
 	"securehtml-form-version": "哈希值版本",
-	"securehtml-form-deprecated": "不推荐使用",
+	"securehtml-form-deprecated": "已弃用",
 	"securehtml-form-keyname": "键值名称（可选）",
 	"securehtml-form-keysecret": "密钥",
 	"securehtml-form-html": "原始HTML",
