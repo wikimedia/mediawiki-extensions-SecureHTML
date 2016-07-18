@@ -6,6 +6,7 @@
 	"securehtml-desc": "Lets you include arbitrary HTML in an authorized and secure way",
 	"securehtml-nokeys": "Error: <code>$wgSecureHTMLSecrets</code> is not populated.",
 	"securehtml-legacykeys": "Warning: <code>$wgSecureHTMLSecrets</code> (version 2) is not populated, but <code>$shtml_keys</code> (version 1) is.\nPlease convert to version 2 hashes as soon as possible, as version 1 is deprecated.",
+	"securehtml-hashrequired": "Error: Hash required.",
 	"securehtml-invalidhash": "Error: Invalid hash.",
 	"securehtml-invalidversion": "Error: Invalid version.",
 	"securehtml-input-title": "HTML input",

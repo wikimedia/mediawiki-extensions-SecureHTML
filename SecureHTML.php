@@ -76,6 +76,12 @@ function secureHTMLRender( $input, $argv ) {
 	global $wgSecureHTMLSecrets;
 	global $shtml_keys;
 
+	# The hash attribute is required.
+	if ( !isset( $argv['hash'] ) ) {
+		return( '<strong><em>' . wfMessage( 'securehtml-hashrequired' ) . '</em></strong>' . "\n" );
+	}
+
+	# Default (but deprecated) version 1.
 	if ( !isset( $argv['version'] ) ) {
 		$argv['version'] = '1';
 	}
@@ -93,7 +99,14 @@ function secureHTMLRender( $input, $argv ) {
 		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
 		# The key secret.
-		$keysecret = $wgSecureHTMLSecrets[$keyname];
+		if ( array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
+			$keysecret = $wgSecureHTMLSecrets[$keyname];
+		} else {
+			# Respond with "invalid hash" instead of something like "invalid
+			# key name", to avoid leaking the existence of a key name due to
+			# dictionary attack.
+			return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
+		}
 
 		# Compute a test hash.
 		$testhash = hash_hmac( 'sha256', $input, $keysecret );
@@ -113,7 +126,14 @@ function secureHTMLRender( $input, $argv ) {
 		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
 		# The key secret.
-		$keysecret = $shtml_keys[$keyname];
+		if ( array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
+			$keysecret = $shtml_keys[$keyname];
+		} else {
+			# Respond with "invalid hash" instead of something like "invalid
+			# key name", to avoid leaking the existence of a key name due to
+			# dictionary attack.
+			return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
+		}
 
 		# Compute a test hash.
 		$testhash = md5( $keysecret . $input );
