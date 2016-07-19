@@ -8,6 +8,7 @@
 	"securehtml-desc": "Овозможува вклучување на произволен HTML на повластен и безбеден начин",
 	"securehtml-nokeys": "Грешка: <code>$wgSecureHTMLSecrets</code> е празен.",
 	"securehtml-legacykeys": "Предупредување: <code>$wgSecureHTMLSecrets</code> (вер. 2) е празен, но <code>$shtml_keys</code> (вер. 1) не е.\nПретворете ги во тараби од верзија 2 што е можно побргу, бидејќи верзијата 1 е застарена.",
+	"securehtml-hashrequired": "Грешка: Треба тараба.",
 	"securehtml-invalidhash": "Грешка: Неважечка тараба.",
 	"securehtml-invalidversion": "Грешка: Неважечка верзија.",
 	"securehtml-input-title": "HTML-внос",

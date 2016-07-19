@@ -10,6 +10,7 @@
 	"securehtml-desc": "승인되고 안전한 방법으로 임의 HTML을 포함하도록 하기",
 	"securehtml-nokeys": "오류: <code>$wgSecureHTMLSecrets</code>가 설정되지 않았습니다.",
 	"securehtml-legacykeys": "경고: <code>$wgSecureHTMLSecrets</code>(버전 2)가 설정되지 않았지만 <code>$shtml_keys</code> (버전 1)는 설정됐습니다. 버전 1이 사용 불가능해지기 전에 가능한 빨리 버전 2 해쉬로 전환해주세요.",
+	"securehtml-hashrequired": "오류: 해시가 필요합니다.",
 	"securehtml-invalidhash": "오류: 유효하지 않은 해시",
 	"securehtml-invalidversion": "오류: 유효하지 않은 버전.",
 	"securehtml-input-title": "HTML 입력",

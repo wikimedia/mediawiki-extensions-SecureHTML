@@ -9,6 +9,7 @@
 	"securehtml-desc": "Vous permet d’inclure du code HTML arbitraire dans un cadre autorisé et sécurisé",
 	"securehtml-nokeys": "Erreur: <code>$wgSecureHTMLSecrets</code> n’est pas renseigné.",
 	"securehtml-legacykeys": "Avertissement: <code>$wgSecureHTMLSecrets</code> (version 2) n’est pas renseigné, mais <code>$shtml_keys</code> (version 1) l’est.\nVeuillez faire la conversion vers les hachages de la version 2 dès que possible, car la version 1 est obsolète.",
+	"securehtml-hashrequired": "Erreur : Hash obligatoire.",
 	"securehtml-invalidhash": "Erreur: Hachage non valide.",
 	"securehtml-invalidversion": "Erreur : Version non valide.",
 	"securehtml-input-title": "Entrée HTML",
