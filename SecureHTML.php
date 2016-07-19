@@ -126,7 +126,7 @@ function secureHTMLRender( $input, $argv ) {
 		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
 		# The key secret.
-		if ( array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
+		if ( array_key_exists( $keyname, $shtml_keys ) ) {
 			$keysecret = $shtml_keys[$keyname];
 		} else {
 			# Respond with "invalid hash" instead of something like "invalid
