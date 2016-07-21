@@ -8,6 +8,7 @@ class SpecialSecureHTML extends SpecialPage {
 
 	function execute( $par ) {
 		global $wgSecureHTMLSecrets;
+		global $wgSecureHTMLTag;
 		global $shtml_keys;
 
 		$request = $this->getRequest();
@@ -38,13 +39,13 @@ class SpecialSecureHTML extends SpecialPage {
 
 		if ( $keysecret && $html ) {
 			if ( $version == '2' ) {
-				$generated = '<shtml version="2" ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html, $keysecret ) . '">';
+				$generated = '<' . $wgSecureHTMLTag . ' version="2" ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html, $keysecret ) . '">';
 				$generated .= $html;
-				$generated .= '</shtml>';
+				$generated .= '</' . $wgSecureHTMLTag . '>';
 			} else {
-				$generated = '<shtml ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . md5( $keysecret . $html ) . '">';
+				$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . md5( $keysecret . $html ) . '">';
 				$generated .= $html;
-				$generated .= '</shtml>';
+				$generated .= '</' . $wgSecureHTMLTag . '>';
 			}
 			$output->addWikiText( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );
 			$output->addHTML( '<form><textarea style="width: 100%;" cols="60" rows="20" readonly>' . htmlspecialchars( $generated ) . '</textarea></form>' . "\n" );

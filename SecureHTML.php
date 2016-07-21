@@ -52,6 +52,9 @@ if ( !isset( $shtml_keys ) ) {
 if ( !isset( $wgSecureHTMLSpecialRight ) ) {
 	$wgSecureHTMLSpecialRight = 'edit';
 }
+if ( !isset( $wgSecureHTMLTag ) ) {
+	$wgSecureHTMLTag = 'shtml';
+}
 
 $dir = dirname( __FILE__ ) . '/';
 
@@ -69,7 +72,8 @@ $wgExtensionFunctions[] = "secureHTMLSetup";
 
 function secureHTMLSetup() {
 	global $wgParser;
-	$wgParser->setHook( "shtml", "secureHTMLRender" );
+	global $wgSecureHTMLTag;
+	$wgParser->setHook( $wgSecureHTMLTag, "secureHTMLRender" );
 }
 
 function secureHTMLRender( $input, $argv ) {
