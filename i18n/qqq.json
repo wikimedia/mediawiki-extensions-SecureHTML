@@ -9,6 +9,7 @@
 	"securehtml-desc": "{{desc|name=Secure HTML|url=https://www.mediawiki.org/wiki/Extension:SecureHTML}}",
 	"securehtml-nokeys": "{{doc-important|Do not translate \"<code>$wgSecureHTMLSecrets</code>\"; is a global variable.}}\nRendered by the shtml tag when the extension is not configured.",
 	"securehtml-legacykeys": "{{doc-important|Do not translate \"<code>$wgSecureHTMLSecrets</code>\"; is a global variable.}}\nSpecial:SecureHTML: Warning message, displayed when the user is using a legacy configuration.\n\nSee also:\n* {{msg-mw|Securehtml-form-deprecated}}",
+	"securehtml-hashrequired": "Rendered by the shtml tag when the required option \"hash\" is not provided.",
 	"securehtml-invalidhash": "Rendered by the shtml tag when an invalid hash is calculated.",
 	"securehtml-invalidversion": "Rendered by the shtml tag when an invalid version is given.",
 	"securehtml-input-title": "Special:SecureHTML: The title sub-header for the HTML input form section.",
