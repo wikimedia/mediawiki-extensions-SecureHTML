@@ -31,24 +31,30 @@ class SpecialSecureHTML extends SpecialPage {
 			$output->addWikiText( wfMessage( 'securehtml-legacykeys' ) );
 		}
 
-		$version = $request->getText( 'version' );
+		$version = $request->getText( 'wpsecurehtmlversion' );
 		if ( ! $version ) { $version = '2'; }
-		$keyname = $request->getText( 'keyname' );
-		$keysecret = $request->getText( 'keysecret' );
-		$html = str_replace( "\r\n", "\n", $request->getText( 'html' ) );
+		$keyname = $request->getText( 'wpsecurehtmlkeyname' );
+		$keysecret = $request->getText( 'wpsecurehtmlkeysecret' );
+		$html = $request->getText( 'wpsecurehtmlraw' );
+		$html_lf = str_replace( "\r\n", "\n", $html );
 
 		if ( $keysecret && $html ) {
 			if ( $version == '2' ) {
-				$generated = '<' . $wgSecureHTMLTag . ' version="2" ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html, $keysecret ) . '">';
-				$generated .= $html;
+				$generated = '<' . $wgSecureHTMLTag . ' version="2" ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html_lf, $keysecret ) . '">';
+				$generated .= $html_lf;
 				$generated .= '</' . $wgSecureHTMLTag . '>';
 			} else {
-				$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . md5( $keysecret . $html ) . '">';
-				$generated .= $html;
+				$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . md5( $keysecret . $html_lf ) . '">';
+				$generated .= $html_lf;
 				$generated .= '</' . $wgSecureHTMLTag . '>';
 			}
 			$output->addWikiText( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );
-			$output->addHTML( '<form><textarea style="width: 100%;" cols="60" rows="20" readonly>' . htmlspecialchars( $generated ) . '</textarea></form>' . "\n" );
+			$params = array(
+				'cols' => $user->getOption( 'cols' ),
+				'rows' => $user->getOption( 'rows' ),
+				'readonly' => 'readonly',
+			);
+			$output->addHTML( Html::element( 'textarea', $params, $generated ) );
 			$output->addWikiText( wfMessage( 'securehtml-outputinstructions' ) );
 			$output->addWikiText( '== ' . wfMessage( 'securehtml-renderedhhtml-title' ) . ' ==' );
 			$output->addWikiText( $generated );
@@ -56,41 +62,64 @@ class SpecialSecureHTML extends SpecialPage {
 
 		$output->addWikiText( '== ' . wfMessage( 'securehtml-input-title' ) . ' ==' );
 		$output->addWikiText( wfMessage( 'securehtml-inputinstructions' ) );
-		$output->addHTML( '<form method="post">' . "\n" );
-		$output->addHTML( '<table>' . "\n" );
+
+		$formDescriptor = array();
 		if ( count( $shtml_keys ) > 0 ) {
-			$output->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-version' ) . ':</strong></td><td><select name="version">' );
-			$sversions = array(
-				'1' => '1 (' . wfMessage( 'securehtml-form-deprecated' ) . ')',
-				'2' => '2',
+			$formDescriptor['securehtmlversion'] = array(
+				'type' => 'select',
+				'label-message' => 'securehtml-form-version',
+				'options' => array(
+					'2' => '2',
+					'1 (' . wfMessage( 'securehtml-form-deprecated' ) . ')' => '1',
+				),
+				'required' => true,
 			);
-			foreach ( $sversions as $sversion => $sversionlabel ) {
-				$selected = ( $sversion == $version ? ' selected' : '' );
-				$output->addHTML( '><option value="' . $sversion . '"' . $selected . '>' . $sversionlabel . '</option>' );
-			}
-			$output->addHTML( '</select></td></tr>' . "\n" );
 		} else {
-			$output->addHTML( '<input type="hidden" name="version" value="2" />' . "\n" );
+			$formDescriptor['securehtmlversion'] = array(
+				'type' => 'hidden',
+				'label' => '2',
+			);
 		}
-		$output->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-keyname' ) . ':</strong></td><td><select name="keyname"><option value=""></option>' );
+		$keyname_labels = array(
+			'' => '',
+		);
 		if ( is_array( $wgSecureHTMLSecrets ) ) {
 			foreach ( array_keys( $wgSecureHTMLSecrets ) as $skeyname ) {
-				$selected = ( ( ( $version == '2' ) && ( $skeyname == $keyname ) ) ? ' selected' : '' );
-				$output->addHTML( '<option value="' . htmlspecialchars( $skeyname ) . '"' . $selected . '>' . htmlspecialchars( $skeyname ) . '</option>' );
+				$keyname_labels[$skeyname] = $skeyname;
 			}
 		}
 		if ( is_array( $shtml_keys ) ) {
 			foreach ( array_keys( $shtml_keys ) as $skeyname ) {
-				$selected = ( ( ( $version == '1' ) && ( $skeyname == $keyname ) ) ? ' selected' : '' );
-				$output->addHTML( '<option value="' . htmlspecialchars( $skeyname ) . '"' . $selected . '>' . htmlspecialchars( $skeyname ) . ' (' . wfMessage( 'securehtml-form-deprecated' ) . ')</option>' );
+				$keyname_labels[$skeyname . ' (' . wfMessage( 'securehtml-form-deprecated' ) . ')'] = $skeyname;
 			}
 		}
-		$output->addHTML( '</select></td></tr>' . "\n" );
-		$output->addHTML( '<tr><td><strong>' . wfMessage( 'securehtml-form-keysecret' ) . ':</strong></td><td><input type="password" name="keysecret" size="20"></td></tr>' . "\n" );
-		$output->addHTML( '</table>' . "\n" );
-		$output->addHTML( '<strong>' . wfMessage( 'securehtml-form-html' ) . ':</strong><br/><textarea style="width: 100%;" name="html" cols="60" rows="20">' . htmlspecialchars( $html ) . '</textarea><br/>' . "\n" );
-		$output->addHTML( '<input type="submit" value="' . wfMessage( 'securehtml-form-submit' ) . '"><br/>' . "\n" );
-		$output->addHTML( '</form>' . "\n" );
+		$formDescriptor['securehtmlkeyname'] = array(
+			'type' => 'select',
+			'label-message' => 'securehtml-form-keyname',
+			'options' => $keyname_labels,
+		);
+		$formDescriptor['securehtmlkeysecret'] = array(
+			'type' => 'password',
+			'label-message' => 'securehtml-form-keysecret',
+			'required' => true,
+		);
+		$formDescriptor['securehtmlraw'] = array(
+			'type' => 'textarea',
+			'label-message' => 'securehtml-form-html',
+			'id' => 'wpSecureHTMLRawHTML',
+			'cols' => $user->getIntOption( 'cols' ),
+			'rows' => $user->getIntOption( 'rows' ),
+			'required' => true,
+		);
+
+		$htmlForm = new HTMLForm( $formDescriptor, $this->getContext(), 'securehtml' );
+		$htmlForm->setSubmitCallback( array( 'SpecialSecureHTML', 'trySubmit' ) );
+		$htmlForm->show();
+	}
+
+	function trySubmit( $formData ) {
+		# Always display the form.
+		return false;
 	}
 
 	protected function getGroupName() {
