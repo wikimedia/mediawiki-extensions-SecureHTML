@@ -46,9 +46,6 @@ $wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = arr
 if ( !isset( $wgSecureHTMLSecrets ) ) {
 	$wgSecureHTMLSecrets = array();
 }
-if ( !isset( $shtml_keys ) ) {
-	$shtml_keys = array();
-}
 if ( !isset( $wgSecureHTMLSpecialRight ) ) {
 	$wgSecureHTMLSpecialRight = 'edit';
 }
@@ -78,72 +75,35 @@ function secureHTMLSetup() {
 
 function secureHTMLRender( $input, $argv ) {
 	global $wgSecureHTMLSecrets;
-	global $shtml_keys;
 
 	# The hash attribute is required.
 	if ( !isset( $argv['hash'] ) ) {
 		return( '<strong><em>' . wfMessage( 'securehtml-hashrequired' ) . '</em></strong>' . "\n" );
 	}
 
-	# Default (but deprecated) version 1.
-	if ( !isset( $argv['version'] ) ) {
-		$argv['version'] = '1';
+	# If the array is empty, there is no possible way this will work.
+	if ( count( $wgSecureHTMLSecrets ) == 0 ) {
+		return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
 	}
 
-	if ( $argv['version'] == '2' ) {
-		# If the array is empty, there is no possible way this will work.
-		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
-			return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
-		}
+	# Get a list of key names.
+	$keynames = array_keys( $wgSecureHTMLSecrets );
 
-		# Get a list of key names.
-		$keynames = array_keys( $wgSecureHTMLSecrets );
+	# If the desired key name is not available, assume the first one.
+	$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
-		# If the desired key name is not available, assume the first one.
-		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
-
-		# The key secret.
-		if ( array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
-			$keysecret = $wgSecureHTMLSecrets[$keyname];
-		} else {
-			# Respond with "invalid hash" instead of something like "invalid
-			# key name", to avoid leaking the existence of a key name due to
-			# dictionary attack.
-			return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
-		}
-
-		# Compute a test hash.
-		$testhash = hash_hmac( 'sha256', $input, $keysecret );
-	} elseif ( $argv['version'] == '1' ) {
-		# Version 1 is deprecated and will be removed at a future date.
-		# Please be sure to migrate Version 1 snippets to Version 2.
-
-		# If the array is empty, there is no possible way this will work.
-		if ( count( $shtml_keys ) == 0 ) {
-			return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
-		}
-
-		# Get a list of key names.
-		$keynames = array_keys( $shtml_keys );
-
-		# If the desired key name is not available, assume the first one.
-		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
-
-		# The key secret.
-		if ( array_key_exists( $keyname, $shtml_keys ) ) {
-			$keysecret = $shtml_keys[$keyname];
-		} else {
-			# Respond with "invalid hash" instead of something like "invalid
-			# key name", to avoid leaking the existence of a key name due to
-			# dictionary attack.
-			return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
-		}
-
-		# Compute a test hash.
-		$testhash = md5( $keysecret . $input );
+	# The key secret.
+	if ( array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
+		$keysecret = $wgSecureHTMLSecrets[$keyname];
 	} else {
-		return( '<strong><em>' . wfMessage( 'securehtml-invalidversion' ) . '</em></strong>' . "\n" );
+		# Respond with "invalid hash" instead of something like "invalid
+		# key name", to avoid leaking the existence of a key name due to
+		# dictionary attack.
+		return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
 	}
+
+	# Compute a test hash.
+	$testhash = hash_hmac( 'sha256', $input, $keysecret );
 
 	# If the test hash matches the supplied hash, return the raw HTML.  Otherwise, error.
 	if ( $testhash == $argv['hash'] ) {

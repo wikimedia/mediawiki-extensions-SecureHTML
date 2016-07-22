@@ -9,7 +9,6 @@ class SpecialSecureHTML extends SpecialPage {
 	function execute( $par ) {
 		global $wgSecureHTMLSecrets;
 		global $wgSecureHTMLTag;
-		global $shtml_keys;
 
 		$request = $this->getRequest();
 		$output = $this->getOutput();
@@ -22,32 +21,20 @@ class SpecialSecureHTML extends SpecialPage {
 
 		$this->setHeaders();
 
-		if ( ( count( $wgSecureHTMLSecrets ) == 0 ) && ( count( $shtml_keys ) == 0 ) ) {
+		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
 			$output->addWikiText( wfMessage( 'securehtml-nokeys' ) );
 			return;
 		}
 
-		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
-			$output->addWikiText( wfMessage( 'securehtml-legacykeys' ) );
-		}
-
-		$version = $request->getText( 'wpsecurehtmlversion' );
-		if ( ! $version ) { $version = '2'; }
 		$keyname = $request->getText( 'wpsecurehtmlkeyname' );
 		$keysecret = $request->getText( 'wpsecurehtmlkeysecret' );
 		$html = $request->getText( 'wpsecurehtmlraw' );
 		$html_lf = str_replace( "\r\n", "\n", $html );
 
 		if ( $keysecret && $html ) {
-			if ( $version == '2' ) {
-				$generated = '<' . $wgSecureHTMLTag . ' version="2" ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html_lf, $keysecret ) . '">';
-				$generated .= $html_lf;
-				$generated .= '</' . $wgSecureHTMLTag . '>';
-			} else {
-				$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . md5( $keysecret . $html_lf ) . '">';
-				$generated .= $html_lf;
-				$generated .= '</' . $wgSecureHTMLTag . '>';
-			}
+			$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html_lf, $keysecret ) . '">';
+			$generated .= $html_lf;
+			$generated .= '</' . $wgSecureHTMLTag . '>';
 			$output->addWikiText( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );
 			$params = array(
 				'cols' => $user->getOption( 'cols' ),
@@ -64,34 +51,11 @@ class SpecialSecureHTML extends SpecialPage {
 		$output->addWikiText( wfMessage( 'securehtml-inputinstructions' ) );
 
 		$formDescriptor = array();
-		if ( count( $shtml_keys ) > 0 ) {
-			$formDescriptor['securehtmlversion'] = array(
-				'type' => 'select',
-				'label-message' => 'securehtml-form-version',
-				'options' => array(
-					'2' => '2',
-					'1 (' . wfMessage( 'securehtml-form-deprecated' ) . ')' => '1',
-				),
-				'required' => true,
-			);
-		} else {
-			$formDescriptor['securehtmlversion'] = array(
-				'type' => 'hidden',
-				'label' => '2',
-			);
-		}
 		$keyname_labels = array(
 			'' => '',
 		);
-		if ( is_array( $wgSecureHTMLSecrets ) ) {
-			foreach ( array_keys( $wgSecureHTMLSecrets ) as $skeyname ) {
-				$keyname_labels[$skeyname] = $skeyname;
-			}
-		}
-		if ( is_array( $shtml_keys ) ) {
-			foreach ( array_keys( $shtml_keys ) as $skeyname ) {
-				$keyname_labels[$skeyname . ' (' . wfMessage( 'securehtml-form-deprecated' ) . ')'] = $skeyname;
-			}
+		foreach ( array_keys( $wgSecureHTMLSecrets ) as $skeyname ) {
+			$keyname_labels[$skeyname] = $skeyname;
 		}
 		$formDescriptor['securehtmlkeyname'] = array(
 			'type' => 'select',
