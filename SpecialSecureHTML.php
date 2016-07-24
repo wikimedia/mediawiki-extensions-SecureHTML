@@ -31,8 +31,19 @@ class SpecialSecureHTML extends SpecialPage {
 		$html = $request->getText( 'wpsecurehtmlraw' );
 		$html_lf = str_replace( "\r\n", "\n", $html );
 
+		if ( !array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
+			$keyname = '';
+		}
+
+		$keyalgorithm = 'sha256';
+		if ( is_array( $wgSecureHTMLSecrets[$keyname] ) ) {
+			if ( array_key_exists( 'algorithm', $wgSecureHTMLSecrets[$keyname] ) ) {
+				$keyalgorithm = $wgSecureHTMLSecrets[$keyname]['algorithm'];
+			}
+		}
+
 		if ( $keysecret && $html ) {
-			$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( 'sha256', $html_lf, $keysecret ) . '">';
+			$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( $keyalgorithm, $html_lf, $keysecret ) . '">';
 			$generated .= $html_lf;
 			$generated .= '</' . $wgSecureHTMLTag . '>';
 			$output->addWikiText( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );

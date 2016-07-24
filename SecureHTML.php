@@ -92,18 +92,29 @@ function secureHTMLRender( $input, $argv ) {
 	# If the desired key name is not available, assume the first one.
 	$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
 
-	# The key secret.
-	if ( array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
-		$keysecret = $wgSecureHTMLSecrets[$keyname];
-	} else {
+	# Key secret configuration.
+	$keyalgorithm = 'sha256';
+	if ( !array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
 		# Respond with "invalid hash" instead of something like "invalid
 		# key name", to avoid leaking the existence of a key name due to
 		# dictionary attack.
 		return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
 	}
+	if ( is_array( $wgSecureHTMLSecrets[$keyname] ) ) {
+		if ( array_key_exists( 'secret', $wgSecureHTMLSecrets[$keyname] ) ) {
+			$keysecret = $wgSecureHTMLSecrets[$keyname]['secret'];
+		} else {
+			return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
+		}
+		if ( array_key_exists( 'algorithm', $wgSecureHTMLSecrets[$keyname] ) ) {
+			$keyalgorithm = $wgSecureHTMLSecrets[$keyname]['algorithm'];
+		}
+	} else {
+		$keysecret = $wgSecureHTMLSecrets[$keyname];
+	}
 
 	# Compute a test hash.
-	$testhash = hash_hmac( 'sha256', $input, $keysecret );
+	$testhash = hash_hmac( $keyalgorithm, $input, $keysecret );
 
 	# If the test hash matches the supplied hash, return the raw HTML.  Otherwise, error.
 	if ( $testhash == $argv['hash'] ) {
