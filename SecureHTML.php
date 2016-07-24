@@ -78,12 +78,12 @@ function secureHTMLRender( $input, $argv ) {
 
 	# The hash attribute is required.
 	if ( !isset( $argv['hash'] ) ) {
-		return( '<strong><em>' . wfMessage( 'securehtml-hashrequired' ) . '</em></strong>' . "\n" );
+		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-hashrequired' ) ) );
 	}
 
 	# If the array is empty, there is no possible way this will work.
 	if ( count( $wgSecureHTMLSecrets ) == 0 ) {
-		return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
+		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-nokeys' ) ) );
 	}
 
 	# Get a list of key names.
@@ -98,13 +98,13 @@ function secureHTMLRender( $input, $argv ) {
 		# Respond with "invalid hash" instead of something like "invalid
 		# key name", to avoid leaking the existence of a key name due to
 		# dictionary attack.
-		return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
+		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
 	}
 	if ( is_array( $wgSecureHTMLSecrets[$keyname] ) ) {
 		if ( array_key_exists( 'secret', $wgSecureHTMLSecrets[$keyname] ) ) {
 			$keysecret = $wgSecureHTMLSecrets[$keyname]['secret'];
 		} else {
-			return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
+			return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
 		}
 		if ( array_key_exists( 'algorithm', $wgSecureHTMLSecrets[$keyname] ) ) {
 			$keyalgorithm = $wgSecureHTMLSecrets[$keyname]['algorithm'];
@@ -120,7 +120,7 @@ function secureHTMLRender( $input, $argv ) {
 	if ( $testhash == $argv['hash'] ) {
 		return( array( $input, 'markerType' => 'nowiki' ) );
 	} else {
-		return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
+		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
 	}
 
 }
