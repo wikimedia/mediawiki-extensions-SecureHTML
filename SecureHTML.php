@@ -82,7 +82,7 @@ function secureHTMLRender( $input, $argv ) {
 	}
 
 	# If the array is empty, there is no possible way this will work.
-	if ( count( $wgSecureHTMLSecrets ) == 0 ) {
+	if ( count( $wgSecureHTMLSecrets ) === 0 ) {
 		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-nokeys' ) ) );
 	}
 
@@ -117,7 +117,7 @@ function secureHTMLRender( $input, $argv ) {
 	$testhash = hash_hmac( $keyalgorithm, $input, $keysecret );
 
 	# If the test hash matches the supplied hash, return the raw HTML.  Otherwise, error.
-	if ( $testhash == $argv['hash'] ) {
+	if ( $testhash === $argv['hash'] ) {
 		return( array( $input, 'markerType' => 'nowiki' ) );
 	} else {
 		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
