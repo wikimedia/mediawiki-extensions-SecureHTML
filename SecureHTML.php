@@ -49,6 +49,9 @@ if ( !isset( $wgSecureHTMLSecrets ) ) {
 if ( !isset( $wgSecureHTMLSpecialRight ) ) {
 	$wgSecureHTMLSpecialRight = 'edit';
 }
+if ( !isset( $wgSecureHTMLSpecialDropdown ) ) {
+	$wgSecureHTMLSpecialDropdown = True;
+}
 if ( !isset( $wgSecureHTMLTag ) ) {
 	$wgSecureHTMLTag = 'shtml';
 }
@@ -95,9 +98,11 @@ function secureHTMLRender( $input, $argv ) {
 	# Key secret configuration.
 	$keyalgorithm = 'sha256';
 	if ( !array_key_exists( $keyname, $wgSecureHTMLSecrets ) ) {
-		# Respond with "invalid hash" instead of something like "invalid
-		# key name", to avoid leaking the existence of a key name due to
-		# dictionary attack.
+		# To avoid leaking the existence of a key name by unauthorized users,
+		# perform a dummy HMAC SHA256 (mitigate timing attacks), then
+		# respond with "invalid hash", instead of something like "invalid key
+		# name".
+		$testhash = hash_hmac( 'sha256', $input, '' );
 		return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
 	}
 	if ( is_array( $wgSecureHTMLSecrets[$keyname] ) ) {

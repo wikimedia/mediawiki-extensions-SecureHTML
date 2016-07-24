@@ -9,6 +9,7 @@ class SpecialSecureHTML extends SpecialPage {
 	function execute( $par ) {
 		global $wgSecureHTMLSecrets;
 		global $wgSecureHTMLTag;
+		global $wgSecureHTMLSpecialDropdown;
 
 		$request = $this->getRequest();
 		$output = $this->getOutput();
@@ -62,17 +63,25 @@ class SpecialSecureHTML extends SpecialPage {
 		$output->addWikiText( wfMessage( 'securehtml-inputinstructions' ) );
 
 		$formDescriptor = array();
-		$keyname_labels = array(
-			'' => '',
-		);
-		foreach ( array_keys( $wgSecureHTMLSecrets ) as $skeyname ) {
-			$keyname_labels[$skeyname] = $skeyname;
+
+		if ( $wgSecureHTMLSpecialDropdown ) {
+			$keyname_labels = array(
+				'' => '',
+			);
+			foreach ( array_keys( $wgSecureHTMLSecrets ) as $skeyname ) {
+				$keyname_labels[$skeyname] = $skeyname;
+			}
+			$formDescriptor['securehtmlkeyname'] = array(
+				'type' => 'select',
+				'label-message' => 'securehtml-form-keyname',
+				'options' => $keyname_labels,
+			);
+		} else {
+			$formDescriptor['securehtmlkeyname'] = array(
+				'type' => 'text',
+				'label-message' => 'securehtml-form-keyname',
+			);
 		}
-		$formDescriptor['securehtmlkeyname'] = array(
-			'type' => 'select',
-			'label-message' => 'securehtml-form-keyname',
-			'options' => $keyname_labels,
-		);
 		$formDescriptor['securehtmlkeysecret'] = array(
 			'type' => 'password',
 			'label-message' => 'securehtml-form-keysecret',
