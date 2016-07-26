@@ -7,6 +7,7 @@
 	"securehtml": "HTML seguru",
 	"securehtml-desc": "Permite incluir HTML arbitrariu d'una manera autorizada y segura",
 	"securehtml-nokeys": "Error: <code>$wgSecureHTMLSecrets</code> nun ta configurada.",
+	"securehtml-hashrequired": "Error: Hash riquíu.",
 	"securehtml-invalidhash": "Error: hash inválidu.",
 	"securehtml-input-title": "Entrada HTML",
 	"securehtml-generatedoutput-title": "Salida xenerada",

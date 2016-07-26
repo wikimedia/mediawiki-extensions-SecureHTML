@@ -8,6 +8,7 @@
 	"securehtml": "HTML sicuro",
 	"securehtml-desc": "Consente di includere HTML arbitrario in modo sicuro e autorizzato",
 	"securehtml-nokeys": "Errore: <code>$wgSecureHTMLSecrets</code> non è definito.",
+	"securehtml-hashrequired": "Errore: Hash richiesto.",
 	"securehtml-invalidhash": "Errore: Hash non valido.",
 	"securehtml-input-title": "Input HTML",
 	"securehtml-generatedoutput-title": "Output generato",
