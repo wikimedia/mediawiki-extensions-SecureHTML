@@ -3,20 +3,18 @@
 		"authors": [
 			"Li3939108",
 			"Liuxinyu970226",
-			"Yfdyh000"
+			"Yfdyh000",
+			"Arthur2e5"
 		]
 	},
 	"securehtml": "安全的HTML",
 	"securehtml-desc": "允许您在经授权和安全的方式中包含任意HTML",
 	"securehtml-nokeys": "错误：<code>$wgSecureHTMLSecrets</code>未填写。",
-	"securehtml-legacykeys": "警告：<code>$wgSecureHTMLSecrets</code>（版本2）不可填充，但<code>$shtml_keys</code>（版本1）可填充。如果可能请转换至版本2的哈希值，因为版本1已弃用。",
+	"securehtml-hashrequired": "错误：需要哈希值。",
 	"securehtml-invalidhash": "错误：无效的哈希值。",
-	"securehtml-invalidversion": "错误：无效的版本。",
 	"securehtml-input-title": "HTML输入",
 	"securehtml-generatedoutput-title": "生成的输出",
 	"securehtml-renderedhhtml-title": "呈现的HTML",
-	"securehtml-form-version": "哈希值版本",
-	"securehtml-form-deprecated": "不推荐使用",
 	"securehtml-form-keyname": "键值名称（可选）",
 	"securehtml-form-keysecret": "密钥",
 	"securehtml-form-html": "原始HTML",
