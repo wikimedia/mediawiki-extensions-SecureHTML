@@ -8,9 +8,6 @@
 	"securehtml-desc": "Léisst Iech arbiträren HTML op eng autoriséiert a sécher Manéier abauen",
 	"securehtml-nokeys": "Feeler: <code>$wgSecureHTMLSecrets</code> ass net ausgefëllt.",
 	"securehtml-invalidhash": "Feeler: hash net valabel.",
-	"securehtml-invalidversion": "Feeler: Net valabel Versioun",
-	"securehtml-form-version": "Hash Versioun",
-	"securehtml-form-deprecated": "vereelst",
 	"securehtml-form-keyname": "Numm vum Schlëssel (fakultativ)",
 	"securehtml-form-keysecret": "Geheime Schlëssel"
 }

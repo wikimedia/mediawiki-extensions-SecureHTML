@@ -24,108 +24,53 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-# Not a valid entry point, skip unless MEDIAWIKI is defined
-if ( !defined( 'MEDIAWIKI' ) ) {
-	echo <<<EOT
-To install my extension, put the following line in LocalSettings.php:
-require_once( "$IP/extensions/SecureHTML/SecureHTML.php" );
-EOT;
-	exit( 1 );
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'SecureHTML' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['SecureHTML'] = __DIR__ . '/i18n';
+	$wgExtensionMessagesFiles['SecureHTMLAlias'] = __DIR__ . '/SecureHTML.alias.php';
+	wfWarn(
+		'Deprecated PHP entry point used for SecureHTML extension. ' .
+		'Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	);
+	return;
 }
 
-$wgExtensionCredits['parserhook'][] = $wgExtensionCredits['specialpage'][] = array(
+$extensionJsonFilename = dirname( __FILE__ ) . '/extension.json';
+$extensionJsonData = FormatJson::decode( file_get_contents( $extensionJsonFilename ), true );
+$wgExtensionCredits[$extensionJsonData['type']][] = array(
 	'path' => __FILE__,
-	'name' => 'Secure HTML',
-	'author' => 'Ryan Finnie',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:Secure_HTML',
-	'descriptionmsg' => 'securehtml-desc',
-	'version' => '2.4.1',
+	'name' => $extensionJsonData['name'],
+	'author' => $extensionJsonData['author'],
+	'url' => $extensionJsonData['url'],
+	'descriptionmsg' => $extensionJsonData['descriptionmsg'],
+	'version' => $extensionJsonData['version'],
+	'license-name' => $extensionJsonData['license-name'],
 );
 
 # Default configuration globals
 if ( !isset( $wgSecureHTMLSecrets ) ) {
 	$wgSecureHTMLSecrets = array();
 }
-if ( !isset( $shtml_keys ) ) {
-	$shtml_keys = array();
-}
 if ( !isset( $wgSecureHTMLSpecialRight ) ) {
 	$wgSecureHTMLSpecialRight = 'edit';
 }
-
-$dir = dirname( __FILE__ ) . '/';
+if ( !isset( $wgSecureHTMLSpecialDropdown ) ) {
+	$wgSecureHTMLSpecialDropdown = True;
+}
+if ( !isset( $wgSecureHTMLTag ) ) {
+	$wgSecureHTMLTag = 'shtml';
+}
 
 # Define Special page
-$wgAutoloadClasses['SpecialSecureHTML'] = $dir . 'SpecialSecureHTML.php';
+$wgAutoloadClasses['SpecialSecureHTML'] = __DIR__ . '/SpecialSecureHTML.php';
 $wgSpecialPages['SecureHTML'] = 'SpecialSecureHTML';
 
 # Define internationalizations
 $wgMessagesDirs['SecureHTML'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SecureHTML'] = $dir . 'SecureHTML.i18n.php';
-$wgExtensionMessagesFiles['SecureHTMLAlias'] = $dir . 'SecureHTML.alias.php';
+$wgExtensionMessagesFiles['SecureHTMLAlias'] = __DIR__ . '/SecureHTML.alias.php';
 
 # Define extension hooks
-$wgExtensionFunctions[] = "secureHTMLSetup";
-
-function secureHTMLSetup() {
-	global $wgParser;
-	$wgParser->setHook( "shtml", "secureHTMLRender" );
-}
-
-function secureHTMLRender( $input, $argv ) {
-	global $wgSecureHTMLSecrets;
-	global $shtml_keys;
-
-	if ( !isset( $argv['version'] ) ) {
-		$argv['version'] = '1';
-	}
-
-	if ( $argv['version'] == '2' ) {
-		# If the array is empty, there is no possible way this will work.
-		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
-			return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
-		}
-
-		# Get a list of key names.
-		$keynames = array_keys( $wgSecureHTMLSecrets );
-
-		# If the desired key name is not available, assume the first one.
-		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
-
-		# The key secret.
-		$keysecret = $wgSecureHTMLSecrets[$keyname];
-
-		# Compute a test hash.
-		$testhash = hash_hmac( 'sha256', $input, $keysecret );
-	} elseif ( $argv['version'] == '1' ) {
-		# Version 1 is deprecated and will be removed at a future date.
-		# Please be sure to migrate Version 1 snippets to Version 2.
-
-		# If the array is empty, there is no possible way this will work.
-		if ( count( $shtml_keys ) == 0 ) {
-			return( '<strong><em>' . wfMessage( 'securehtml-nokeys' ) . '</em></strong>' . "\n" );
-		}
-
-		# Get a list of key names.
-		$keynames = array_keys( $shtml_keys );
-
-		# If the desired key name is not available, assume the first one.
-		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
-
-		# The key secret.
-		$keysecret = $shtml_keys[$keyname];
-
-		# Compute a test hash.
-		$testhash = md5( $keysecret . $input );
-	} else {
-		return( '<strong><em>' . wfMessage( 'securehtml-invalidversion' ) . '</em></strong>' . "\n" );
-	}
-
-	# If the test hash matches the supplied hash, return the raw HTML.  Otherwise, error.
-	if ( $testhash == $argv['hash'] ) {
-		return( array( $input, 'markerType' => 'nowiki' ) );
-	} else {
-		return( '<strong><em>' . wfMessage( 'securehtml-invalidhash' ) . '</em></strong>' . "\n" );
-	}
-
-}
+$wgAutoloadClasses['SecureHTML'] = __DIR__ . '/SecureHTML.hooks.php';
+$wgHooks['ParserFirstCallInit'][] = 'SecureHTML::parserInit';
