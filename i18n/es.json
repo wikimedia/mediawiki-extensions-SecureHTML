@@ -1,25 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "Fitoschido",
-            "Miguel2706"
-        ]
-    },
-    "securehtml": "HTML seguro",
-    "securehtml-desc": "Permite incluir código HTML de forma autorizada y segura",
-    "securehtml-nokeys": "Error: <code>$wgSecureHTMLSecrets</code> no se rellena.",
-    "securehtml-legacykeys": "Advertencia: <code> $wgSecureHTMLSecrets </code> (versión 2) no está rellenado, pero es <code>$shtml_keys</code> (versión 1).\nPor favor, convertir los hashes a la versión 2 lo antes posible, ya que la versión 1 está en desuso.",
-    "securehtml-invalidhash": "Error: Etiqueta no válida.",
-    "securehtml-invalidversion": "Error: Versión no válida.",
-    "securehtml-input-title": "Entrada HTML",
-    "securehtml-generatedoutput-title": "Salida generada",
-    "securehtml-renderedhhtml-title": "HTML procesado",
-    "securehtml-form-version": "Versión de hash",
-    "securehtml-form-deprecated": "En desuso",
-    "securehtml-form-keyname": "Nombre de la clave (opcional)",
-    "securehtml-form-keysecret": "Clave secreta",
-    "securehtml-form-html": "HTML sin procesar",
-    "securehtml-form-submit": "Enviar",
-    "securehtml-inputinstructions": "Introduzca un nombre clave (opcional), clave secreta y el HTML deseado.\nSi no se especifica ningún nombre clave, la primera clave en <code>$wgSecureHTMLSecrets</code> será asumida.",
-    "securehtml-outputinstructions": "Copiar el código anterior exactamente y pegarlo en el editor de wiki.\nSi el código generado no funciona, intente quitar los saltos de línea de la entrada HTML y vuelva a generar."
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Miguel2706",
+			"Macofe"
+		]
+	},
+	"securehtml": "HTML seguro",
+	"securehtml-desc": "Permite incluir código HTML de forma autorizada y segura",
+	"securehtml-nokeys": "Error: <code>$wgSecureHTMLSecrets</code> no se ha rellenado.",
+	"securehtml-invalidhash": "Error: hash no válido.",
+	"securehtml-input-title": "Entrada HTML",
+	"securehtml-generatedoutput-title": "Salida generada",
+	"securehtml-renderedhhtml-title": "HTML procesado",
+	"securehtml-form-keyname": "Nombre de la clave (opcional)",
+	"securehtml-form-keysecret": "Clave secreta",
+	"securehtml-form-html": "HTML sin procesar",
+	"securehtml-form-submit": "Enviar",
+	"securehtml-inputinstructions": "Escribe un nombre clave (opcional), clave secreta y el HTML deseado.\nSi no se especifica ningún nombre clave, se asumirá la primera clave en <code>$wgSecureHTMLSecrets</code>.",
+	"securehtml-outputinstructions": "Copia el código anterior exactamente y pégalo en el editor de wiki.\nSi el código generado no funciona, intenta quitar los saltos de línea de la entrada HTML y vuelve a generarlo."
 }

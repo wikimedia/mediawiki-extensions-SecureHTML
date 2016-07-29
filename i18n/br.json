@@ -1,12 +1,13 @@
 {
-    "@metadata": {
-        "authors": [
-            "Y-M D"
-        ]
-    },
-    "securehtml": "HTML suraet",
-    "securehtml-form-deprecated": "dispredet",
-    "securehtml-form-keyname": "Anv an alc'hwez (diret)",
-    "securehtml-form-keysecret": "Alc'hwez sekred",
-    "securehtml-form-submit": "Kas"
+	"@metadata": {
+		"authors": [
+			"Y-M D",
+			"Fohanno"
+		]
+	},
+	"securehtml": "HTML suraet",
+	"securehtml-form-keyname": "Anv an alc'hwez (diret)",
+	"securehtml-form-keysecret": "Alc'hwez sekred",
+	"securehtml-form-html": "HTML kriz",
+	"securehtml-form-submit": "Kas"
 }

@@ -1,21 +1,19 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "securehtml": "セキュア HTML",
-    "securehtml-desc": "承認済みのセキュアな方法で任意の HTML を使用できるようにする",
-    "securehtml-nokeys": "エラー: <code>$wgSecureHTMLSecrets</code> が設定されていません。",
-    "securehtml-legacykeys": "警告: <code>$wgSecureHTMLSecrets</code> (バージョン 2) が設定されていませんが、<code>$shtml_keys</code> (バージョン 1) が設定されています。\nバージョン 1 は非推奨であるため、できるだけ早くバージョン 2 に変換してください。",
-    "securehtml-invalidhash": "エラー: ハッシュが無効です。",
-    "securehtml-invalidversion": "エラー: バージョンが無効です。",
-    "securehtml-input-title": "HTML の入力",
-    "securehtml-generatedoutput-title": "生成された出力",
-    "securehtml-renderedhhtml-title": "表示される HTML",
-    "securehtml-form-version": "ハッシュのバージョン",
-    "securehtml-form-deprecated": "非推奨",
-    "securehtml-form-keyname": "キー名 (省略可能)",
-    "securehtml-form-html": "HTML コード",
-    "securehtml-form-submit": "送信"
+	"@metadata": {
+		"authors": [
+			"Shirayuki",
+			"Otokoume"
+		]
+	},
+	"securehtml": "セキュア HTML",
+	"securehtml-desc": "承認済みのセキュアな方法で任意の HTML を使用できるようにする",
+	"securehtml-nokeys": "エラー: <code>$wgSecureHTMLSecrets</code> が設定されていません。",
+	"securehtml-hashrequired": "エラー: ハッシュが必要です。",
+	"securehtml-invalidhash": "エラー: ハッシュが無効です。",
+	"securehtml-input-title": "HTML の入力",
+	"securehtml-generatedoutput-title": "生成された出力",
+	"securehtml-renderedhhtml-title": "表示される HTML",
+	"securehtml-form-keyname": "キー名 (省略可能)",
+	"securehtml-form-html": "HTML コード",
+	"securehtml-form-submit": "送信"
 }

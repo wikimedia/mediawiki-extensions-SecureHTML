@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Shirayuki"
-        ]
-    },
-    "securehtml-desc": "Lets you include arbitrary HTML in an authorised and secure way"
+	"@metadata": {
+		"authors": [
+			"Shirayuki"
+		]
+	},
+	"securehtml-desc": "Lets you include arbitrary HTML in an authorised and secure way"
 }
