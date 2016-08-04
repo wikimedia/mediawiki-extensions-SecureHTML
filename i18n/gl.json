@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Toliño"
+			"Toliño",
+			"Elisardojm"
 		]
 	},
 	"securehtml": "HTML seguro",
 	"securehtml-desc": "Permite incluír HTML arbitrario dun modo autorizado e seguro",
 	"securehtml-nokeys": "Erro: <code>$wgSecureHTMLSecrets</code> non está cheo.",
+	"securehtml-hashrequired": "Erro : Hash obrigatorio.",
 	"securehtml-invalidhash": "Erro: Hash non válido.",
 	"securehtml-input-title": "Entrada HTML",
 	"securehtml-generatedoutput-title": "Saída xerada",
