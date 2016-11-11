@@ -7,6 +7,7 @@
 	"securehtml": "Безопасный HTML",
 	"securehtml-desc": "Позволяет включать произвольный HTML разрешённым и безопасным способом",
 	"securehtml-nokeys": "Ошибка: <code>$wgSecureHTMLSecrets</code> не заполнен.",
+	"securehtml-hashrequired": "Ошибка: требуется хэш.",
 	"securehtml-invalidhash": "Ошибка: недопустимый хэш.",
 	"securehtml-input-title": "Ввод HTML",
 	"securehtml-generatedoutput-title": "Сгенерированный результат",
