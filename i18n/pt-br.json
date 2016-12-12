@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fúlvio"
+			"Fúlvio",
+			"!Silent"
 		]
 	},
 	"securehtml": "HTML seguro",
 	"securehtml-desc": "Permite incluir código HTML de maneira autorizada e segura",
 	"securehtml-nokeys": "Erro: <code>$wgSecureHTMLSecrets</code> não está preenchido.",
+	"securehtml-hashrequired": "Erro: hash requerida.",
 	"securehtml-invalidhash": "Erro: Hash inválido.",
 	"securehtml-input-title": "Entrada HTML",
 	"securehtml-generatedoutput-title": "Saída gerada",
