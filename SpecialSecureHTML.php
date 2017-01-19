@@ -91,8 +91,8 @@ class SpecialSecureHTML extends SpecialPage {
 			'type' => 'textarea',
 			'label-message' => 'securehtml-form-html',
 			'id' => 'wpSecureHTMLRawHTML',
-			'cols' => $user->getIntOption( 'cols' ),
-			'rows' => $user->getIntOption( 'rows' ),
+			'cols' => 80,
+			'rows' => 25,
 			'required' => true,
 		);
 
