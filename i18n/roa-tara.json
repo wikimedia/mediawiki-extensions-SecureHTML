@@ -7,6 +7,7 @@
 	"securehtml": "HTML secure",
 	"securehtml-desc": "Te lasse 'ngludere HTML aribtrarie jndr'à 'nu mode secure e autorizzate",
 	"securehtml-nokeys": "Errore: <code>$wgSecureHTMLSecrets</code> non g'ha state anghiute.",
+	"securehtml-hashrequired": "Errore: Richieste l'Hash.",
 	"securehtml-invalidhash": "Errore: Hash invalide.",
 	"securehtml-input-title": "HTML de ingresse",
 	"securehtml-generatedoutput-title": "Resultate generate",
