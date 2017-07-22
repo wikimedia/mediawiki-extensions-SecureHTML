@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"securehtml": "HTML seguro",
+	"securehtml-desc": "Permite incluir código HTML de forma autorizada e segura",
+	"securehtml-nokeys": "Erro: <code>$wgSecureHTMLSecrets</code> não está populado.",
+	"securehtml-hashrequired": "Erro: Resumo criptográfico obrigatório.",
+	"securehtml-invalidhash": "Erro: Resumo criptográfico inválido.",
+	"securehtml-input-title": "Entrada HTML",
+	"securehtml-generatedoutput-title": "Resultado gerado",
+	"securehtml-renderedhhtml-title": "HTML composto",
+	"securehtml-form-keyname": "Nome da chave criptográfica (opcional)",
+	"securehtml-form-keysecret": "Segredo da chave criptográfica",
+	"securehtml-form-html": "HTML em bruto",
+	"securehtml-form-submit": "Enviar"
+}
