@@ -1,12 +1,12 @@
 <?php
 class SecureHTML {
 
-	static function parserInit( $parser ) {
+	public static function parserInit( $parser ) {
 		global $wgSecureHTMLTag;
 		$parser->setHook( $wgSecureHTMLTag, array( __CLASS__, 'secureHTMLRender' ) );
 	}
 
-	function secureHTMLRender( $input, $argv, $parser, $frame ) {
+	public static function secureHTMLRender( $input, $argv, $parser, $frame ) {
 		global $wgSecureHTMLSecrets;
 
 		# The hash attribute is required.
