@@ -49,8 +49,6 @@ class SpecialSecureHTML extends SpecialPage {
 			$generated .= '</' . $wgSecureHTMLTag . '>';
 			$output->addWikiTextAsInterface( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );
 			$params = array(
-				'cols' => $user->getOption( 'cols' ),
-				'rows' => $user->getOption( 'rows' ),
 				'readonly' => 'readonly',
 			);
 			$output->addHTML( Html::element( 'textarea', $params, $generated ) );
