@@ -1,7 +1,7 @@
 Secure HTML
 Copyright (C) 2012-2016 Ryan Finnie
 Lets you include arbitrary HTML in an authorized and secure way
-http://www.mediawiki.org/wiki/Extension:Secure_HTML
+https://www.mediawiki.org/wiki/Extension:Secure_HTML
 
 Occasionally you need to display HTML within a wiki, but allowing it 
 site-wide opens you up to various XSS attacks. This extension solves 
@@ -13,4 +13,4 @@ The extension uses a special page, Special:SecureHTML which helps you
 build a tag, <shtml>, which acts as a wrapper around raw HTML.
 
 For installation and usage instructions, please see:
-http://www.mediawiki.org/wiki/Extension:Secure_HTML
+https://www.mediawiki.org/wiki/Extension:Secure_HTML
