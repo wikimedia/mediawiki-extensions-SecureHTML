@@ -23,7 +23,7 @@ class SpecialSecureHTML extends SpecialPage {
 		$this->setHeaders();
 
 		if ( count( $wgSecureHTMLSecrets ) == 0 ) {
-			$output->addWikiText( wfMessage( 'securehtml-nokeys' ) );
+			$output->addWikiTextAsInterface( wfMessage( 'securehtml-nokeys' ) );
 			return;
 		}
 
@@ -47,20 +47,20 @@ class SpecialSecureHTML extends SpecialPage {
 			$generated = '<' . $wgSecureHTMLTag . ' ' . ( $keyname ? 'keyname="' . htmlspecialchars( $keyname ) . '" ' : '' ) . 'hash="' . hash_hmac( $keyalgorithm, $html_lf, $keysecret ) . '">';
 			$generated .= $html_lf;
 			$generated .= '</' . $wgSecureHTMLTag . '>';
-			$output->addWikiText( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );
+			$output->addWikiTextAsInterface( '== ' . wfMessage( 'securehtml-generatedoutput-title' ) . ' ==' );
 			$params = array(
 				'cols' => $user->getOption( 'cols' ),
 				'rows' => $user->getOption( 'rows' ),
 				'readonly' => 'readonly',
 			);
 			$output->addHTML( Html::element( 'textarea', $params, $generated ) );
-			$output->addWikiText( wfMessage( 'securehtml-outputinstructions' ) );
-			$output->addWikiText( '== ' . wfMessage( 'securehtml-renderedhhtml-title' ) . ' ==' );
-			$output->addWikiText( $generated );
+			$output->addWikiTextAsInterface( wfMessage( 'securehtml-outputinstructions' ) );
+			$output->addWikiTextAsInterface( '== ' . wfMessage( 'securehtml-renderedhhtml-title' ) . ' ==' );
+			$output->addWikiTextAsInterface( $generated );
 		}
 
-		$output->addWikiText( '== ' . wfMessage( 'securehtml-input-title' ) . ' ==' );
-		$output->addWikiText( wfMessage( 'securehtml-inputinstructions' ) );
+		$output->addWikiTextAsInterface( '== ' . wfMessage( 'securehtml-input-title' ) . ' ==' );
+		$output->addWikiTextAsInterface( wfMessage( 'securehtml-inputinstructions' ) );
 
 		$formDescriptor = array();
 
