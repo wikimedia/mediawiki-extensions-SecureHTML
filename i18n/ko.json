@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Nuevo Paso",
 			"Priviet",
 			"Ykhwong",
 			"아라"
 		]
 	},
 	"securehtml": "보안 HTML",
-	"securehtml-desc": "승인되고 안전한 방법으로 임의 HTML을 포함하도록 하기",
+	"securehtml-desc": "승인되고 안전한 방법으로 임의의 HTML을 포함하도록 하기",
 	"securehtml-nokeys": "오류: <code>$wgSecureHTMLSecrets</code>가 설정되지 않았습니다.",
 	"securehtml-hashrequired": "오류: 해시가 필요합니다.",
 	"securehtml-invalidhash": "오류: 유효하지 않은 해시",
