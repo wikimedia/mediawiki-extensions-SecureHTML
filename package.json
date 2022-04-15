@@ -1,4 +1,5 @@
 {
+	"name": "SecureHTML",
 	"private": true,
 	"scripts": {
 		"test": "grunt test"
