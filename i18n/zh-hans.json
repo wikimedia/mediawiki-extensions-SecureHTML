@@ -4,6 +4,7 @@
 			"Arthur2e5",
 			"Li3939108",
 			"Liuxinyu970226",
+			"Stang",
 			"Yfdyh000"
 		]
 	},
@@ -20,5 +21,5 @@
 	"securehtml-form-html": "原始HTML",
 	"securehtml-form-submit": "提交",
 	"securehtml-inputinstructions": "输入密钥名（可选）、密钥代码和所需的原始HTML。如果没有指定密钥名，则将假定第一密钥是<code>$wgSecureHTMLSecrets</code>。",
-	"securehtml-outputinstructions": "完全复制上面代码并将之粘贴于wiki编辑器。如果生成代码不工作，请尝试从载入的HTML中移除所有换行符并重新生成。"
+	"securehtml-outputinstructions": "完全复制上面代码并将之粘贴于wiki编辑器。如果生成代码不工作，请尝试从加载的HTML中移除所有换行符并重新生成。"
 }
