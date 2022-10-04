@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Boniface",
-			"Gomoko"
+			"Gomoko",
+			"Verdy p"
 		]
 	},
 	"securehtml": "HTML sécurisé",
@@ -16,7 +17,7 @@
 	"securehtml-form-keyname": "Nom de la clé (facultatif)",
 	"securehtml-form-keysecret": "Clé secrète",
 	"securehtml-form-html": "HTML brut",
-	"securehtml-form-submit": "Envoyer",
+	"securehtml-form-submit": "Soumettre",
 	"securehtml-inputinstructions": "Entrez un nom de clé (facultatif), une clé secrète, et le HTML brut souhaité.\nSi aucun nom de clé n’est spécifié, la première clé dans <code>$wgSecureHTMLSecrets</code> sera prise par défaut.",
 	"securehtml-outputinstructions": "Copiez le code ci-dessous EXACTEMENT et collez-le dans l’éditeur wiki.\nSi le code généré ne fonctionne pas, essayez de supprimer tous les retours à la ligne du HTML d’entrée et générez de nouveau."
 }
