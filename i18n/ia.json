@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"securehtml": "HTML secur",
+	"securehtml-desc": "Permitte includer qualcunque codice HTML de un maniera autorisate e secur",
+	"securehtml-nokeys": "Error: <code>$wgSecureHTMLSecrets</code> non ha valor.",
+	"securehtml-hashrequired": "Error: Le hash es obligatori.",
+	"securehtml-invalidhash": "Error: Le hash non es valide.",
+	"securehtml-input-title": "Entrata HTML",
+	"securehtml-generatedoutput-title": "Sortita generate",
+	"securehtml-renderedhhtml-title": "Rendition del HTML",
+	"securehtml-form-keyname": "Nomine del clave (optional)",
+	"securehtml-form-keysecret": "Clave secrete",
+	"securehtml-form-html": "HTML brute",
+	"securehtml-form-submit": "Submitter",
+	"securehtml-inputinstructions": "Entra un nomine de clave (optional), secreto de clave, e le codice HTML brute desirate.\nSi non es specificate un nomine de clave, le prime clave in <code>$wgSecureHTMLSecrets</code> essera assumite.",
+	"securehtml-outputinstructions": "Copia le codice hic supra EXACTEMENTE e colla lo in le editor wiki.\nSi le codice generate non functiona, tenta remover tote le saltos de linea del entrata HTML e regenerar le codice."
+}
