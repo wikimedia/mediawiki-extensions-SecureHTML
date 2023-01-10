@@ -4,5 +4,18 @@
 			"Eleassar"
 		]
 	},
-	"securehtml-form-submit": "Pošlji"
+	"securehtml": "Varni HTML",
+	"securehtml-desc": "Omogoča vključitev poljubnega HTML-ja na avtoriziran in varen način",
+	"securehtml-nokeys": "Napaka: <code>$wgSecureHTMLSecrets</code> ni izpolnjeno.",
+	"securehtml-hashrequired": "Napaka: Potreben je hash.",
+	"securehtml-invalidhash": "Napaka: Neveljaven hash.",
+	"securehtml-input-title": "HTML-vnos",
+	"securehtml-generatedoutput-title": "Generirani izhod",
+	"securehtml-renderedhhtml-title": "Upodobljeni HTML",
+	"securehtml-form-keyname": "Ime ključa (izbirno)",
+	"securehtml-form-keysecret": "Skrivnost ključa",
+	"securehtml-form-html": "Goli HTML",
+	"securehtml-form-submit": "Pošlji",
+	"securehtml-inputinstructions": "Vnesite ime ključa (izbirno), skrivnost ključa in želeni goli HTML.\nČe ne boste določili imena ključa, bo uporabljen prvi ključ v  <code>$wgSecureHTMLSecrets</code>.",
+	"securehtml-outputinstructions": "NATANČNO kopirajte zgornjo kodo in jo prilepite v viki urejevalnik.\nČe ustvarjena koda ne bo delovala, poskusite iz vhodnega HTML-ja odstraniti vse pomike vrstic in jo znova ustvarite."
 }
