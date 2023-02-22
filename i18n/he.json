@@ -1,8 +1,22 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Ex-Diktator"
 		]
 	},
-	"securehtml-form-submit": "שליחה"
+	"securehtml": "HTML מאובטח",
+	"securehtml-desc": "אפשרות לכלול HTML שרירותי בצורה מורשית ומאובטחת",
+	"securehtml-nokeys": "שגיאה: <code dir=\"ltr\">$wgSecureHTMLSecrets</code> אינו מאוכלס.",
+	"securehtml-hashrequired": "שגיאה: נדרש גיבוב (hash).",
+	"securehtml-invalidhash": "שגיאה:גיבוב (hash) לא חוקי.",
+	"securehtml-input-title": "קלט HTML",
+	"securehtml-generatedoutput-title": "פלט שנוצר",
+	"securehtml-renderedhhtml-title": "HTML מתוצג",
+	"securehtml-form-keyname": "שם המפתח (לא חובה)",
+	"securehtml-form-keysecret": "סוד מפתח",
+	"securehtml-form-html": "HTML גולמי",
+	"securehtml-form-submit": "שליחה",
+	"securehtml-inputinstructions": "נא להזין שם מפתח (לא חובה), סוד מפתח ו־HTML גולמי רצוי.\nאם לא צוין שם מפתח, ייקבע המפתח הראשון ב־ <code dir=\"ltr\">$wgSecureHTMLSecrets</code>.",
+	"securehtml-outputinstructions": "יש להעתיק את הקוד שלמעלה במדויק ולהדביק אותו בעורך הוויקי.\nאם הקוד שנוצר לא עובד, נא לנסות להסיר את כל ירידות השורה מה־HTML בקלט וליצור מחדש."
 }
