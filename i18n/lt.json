@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zygimantus"
+			"Zygimantus",
+			"Nokeoo"
 		]
 	},
-	"securehtml-hashrequired": "Klaida: Reikalinga maiša."
+	"securehtml": "Saugus HTML",
+	"securehtml-desc": "Galite įterpti savavališką HTML teisėtai ir saugiai",
+	"securehtml-nokeys": "Klaida: <code>$wgSecureHTMLSecrets</code> neužpildytas.",
+	"securehtml-hashrequired": "Klaida: Reikalinga maiša.",
+	"securehtml-input-title": "HTML įvestis",
+	"securehtml-generatedoutput-title": "Sugeneruota išvestis",
+	"securehtml-form-submit": "Pateikti"
 }
