@@ -1,29 +1,39 @@
 <?php
 class SecureHTML {
 
+	/**
+	 * @param Parser $parser
+	 */
 	public static function parserInit( $parser ) {
 		global $wgSecureHTMLTag;
-		$parser->setHook( $wgSecureHTMLTag, array( __CLASS__, 'secureHTMLRender' ) );
+		$parser->setHook( $wgSecureHTMLTag, [ __CLASS__, 'secureHTMLRender' ] );
 	}
 
+	/**
+	 * @param string $input
+	 * @param array $argv
+	 * @param Parser $parser
+	 * @param PPFrame $frame
+	 * @return array|string
+	 */
 	public static function secureHTMLRender( $input, $argv, $parser, $frame ) {
 		global $wgSecureHTMLSecrets;
 
 		# The hash attribute is required.
 		if ( !isset( $argv['hash'] ) ) {
-			return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-hashrequired' ) ) );
+			return( Html::rawElement( 'div', [ 'class' => 'error' ], wfMessage( 'securehtml-hashrequired' ) ) );
 		}
 
 		# If the array is empty, there is no possible way this will work.
 		if ( count( $wgSecureHTMLSecrets ) === 0 ) {
-			return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-nokeys' ) ) );
+			return( Html::rawElement( 'div', [ 'class' => 'error' ], wfMessage( 'securehtml-nokeys' ) ) );
 		}
 
 		# Get a list of key names.
 		$keynames = array_keys( $wgSecureHTMLSecrets );
 
 		# If the desired key name is not available, assume the first one.
-		$keyname = ( isset( $argv['keyname'] ) ? $argv['keyname'] : $keynames[0] );
+		$keyname = ( $argv['keyname'] ?? $keynames[0] );
 
 		# Key secret configuration.
 		$keyalgorithm = 'sha256';
@@ -33,13 +43,13 @@ class SecureHTML {
 			# respond with "invalid hash", instead of something like "invalid key
 			# name".
 			$testhash = hash_hmac( 'sha256', $input, '' );
-			return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
+			return( Html::rawElement( 'div', [ 'class' => 'error' ], wfMessage( 'securehtml-invalidhash' ) ) );
 		}
 		if ( is_array( $wgSecureHTMLSecrets[$keyname] ) ) {
 			if ( array_key_exists( 'secret', $wgSecureHTMLSecrets[$keyname] ) ) {
 				$keysecret = $wgSecureHTMLSecrets[$keyname]['secret'];
 			} else {
-				return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
+				return( Html::rawElement( 'div', [ 'class' => 'error' ], wfMessage( 'securehtml-invalidhash' ) ) );
 			}
 			if ( array_key_exists( 'algorithm', $wgSecureHTMLSecrets[$keyname] ) ) {
 				$keyalgorithm = $wgSecureHTMLSecrets[$keyname]['algorithm'];
@@ -53,9 +63,9 @@ class SecureHTML {
 
 		# If the test hash matches the supplied hash, return the raw HTML.  Otherwise, error.
 		if ( $testhash === $argv['hash'] ) {
-			return( array( $input, 'markerType' => 'nowiki' ) );
+			return( [ $input, 'markerType' => 'nowiki' ] );
 		} else {
-			return( Html::rawElement( 'div', array( 'class' => 'error' ), wfMessage( 'securehtml-invalidhash' ) ) );
+			return( Html::rawElement( 'div', [ 'class' => 'error' ], wfMessage( 'securehtml-invalidhash' ) ) );
 		}
 	}
 

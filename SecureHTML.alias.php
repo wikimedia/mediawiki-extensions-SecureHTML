@@ -6,9 +6,9 @@
  * @ingroup Extensions
  */
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'SecureHTML' => array( 'SecureHTML', 'Secure HTML' ),
-);
+$specialPageAliases['en'] = [
+	'SecureHTML' => [ 'SecureHTML', 'Secure HTML' ],
+];

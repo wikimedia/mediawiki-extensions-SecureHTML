@@ -18,8 +18,8 @@
 		"SecureHTMLAlias": "SecureHTML.alias.php"
 	},
 	"AutoloadClasses": {
-		"SpecialSecureHTML": "SpecialSecureHTML.php",
-		"SecureHTML": "SecureHTML.hooks.php"
+		"SpecialSecureHTML": "includes/specials/SpecialSecureHTML.php",
+		"SecureHTML": "includes/SecureHTML.php"
 	},
 	"Hooks": {
 		"ParserFirstCallInit": "SecureHTML::parserInit"
