@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Siebrand"
 		]
 	},
 	"securehtml": "Veilige HTML",
 	"securehtml-desc": "Maakt het mogelijk om willekeurige HTML toe te voegen op een goedgekeurde en veilige manier",
 	"securehtml-nokeys": "Error: <code>$wgSecureHTMLSecrets</code> heeft geen waarde.",
+	"securehtml-hashrequired": "Fout: Hash vereist.",
 	"securehtml-invalidhash": "Fout: ongeldige hash.",
 	"securehtml-input-title": "HTML-invoer",
 	"securehtml-generatedoutput-title": "Gegenereerde uitvoer",
