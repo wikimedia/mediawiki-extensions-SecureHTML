@@ -5,7 +5,7 @@
 		]
 	},
 	"securehtml": "Varni HTML",
-	"securehtml-desc": "Omogoča vključitev poljubnega HTML-ja na avtoriziran in varen način",
+	"securehtml-desc": "Omogoča vključitev poljubnega HTML-ja na pooblaščen in varen način",
 	"securehtml-nokeys": "Napaka: <code>$wgSecureHTMLSecrets</code> ni izpolnjeno.",
 	"securehtml-hashrequired": "Napaka: Potreben je hash.",
 	"securehtml-invalidhash": "Napaka: Neveljaven hash.",
