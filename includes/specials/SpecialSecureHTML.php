@@ -100,7 +100,7 @@ class SpecialSecureHTML extends SpecialPage {
 		];
 
 		$htmlForm = new HTMLForm( $formDescriptor, $this->getContext(), 'securehtml' );
-		$htmlForm->setSubmitCallback( [ 'SpecialSecureHTML', 'trySubmit' ] );
+		$htmlForm->setSubmitCallback( [ $this, 'trySubmit' ] );
 		$htmlForm->show();
 	}
 
