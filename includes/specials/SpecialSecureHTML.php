@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\Html\Html;
+
 class SpecialSecureHTML extends SpecialPage {
 	function __construct() {
 		global $wgSecureHTMLSpecialRight;
