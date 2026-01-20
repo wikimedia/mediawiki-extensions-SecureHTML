@@ -3,12 +3,14 @@
 		"authors": [
 			"Jopparn",
 			"Lokal Profil",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"securehtml": "Säker HTML",
 	"securehtml-desc": "Låter dig inkludera godtycklig HTML på ett auktoriserat och säkert sätt",
 	"securehtml-nokeys": "Fel: <code>$wgSecureHTMLSecrets</code> är inte ifyllt.",
+	"securehtml-hashrequired": "Fel: Hash krävs.",
 	"securehtml-invalidhash": "Fel: Ogiltig hash.",
 	"securehtml-input-title": "HTML-indata",
 	"securehtml-generatedoutput-title": "Genererad utdata",
