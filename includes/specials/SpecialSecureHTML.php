@@ -4,9 +4,14 @@ use MediaWiki\Html\Html;
 
 class SpecialSecureHTML extends SpecialPage {
 	function __construct() {
+		parent::__construct( 'SecureHTML' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
 		global $wgSecureHTMLSpecialRight;
 
-		parent::__construct( 'SecureHTML', $wgSecureHTMLSpecialRight );
+		return $wgSecureHTMLSpecialRight;
 	}
 
 	/**
