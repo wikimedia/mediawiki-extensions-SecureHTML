@@ -10,6 +10,7 @@
 	"securehtml-nokeys": "Feeler: <code>$wgSecureHTMLSecrets</code> ass net ausgefëllt.",
 	"securehtml-invalidhash": "Feeler: Ongültegen Hash.",
 	"securehtml-input-title": "HTML-Input",
+	"securehtml-generatedoutput-title": "Generéierten Output",
 	"securehtml-form-keyname": "Numm vum Schlëssel (fakultativ)",
 	"securehtml-form-keysecret": "Geheime Schlëssel"
 }
