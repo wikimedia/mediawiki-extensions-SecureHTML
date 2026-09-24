@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"securehtml": "HTML Ammaan ah",
+	"securehtml-desc": "Waxay kuu oggolaanaysaa inaad HTML aan xaddidnayn ku darto si la oggolaaday oo ammaan ah",
+	"securehtml-nokeys": "Khalad: <code>$wgSecureHTMLSecrets</code> lama buuxin.",
+	"securehtml-hashrequired": "Khalad: Hash ayaa loo baahan yahay.",
+	"securehtml-invalidhash": "Khalad: Hash aan sax ahayn.",
+	"securehtml-input-title": "Gelinta HTML",
+	"securehtml-generatedoutput-title": "Natiijada la soo saaray",
+	"securehtml-renderedhhtml-title": "HTML la bandhigay",
+	"securehtml-form-keyname": "Magaca furaha (ikhtiyaari)",
+	"securehtml-form-keysecret": "Sirta furaha",
+	"securehtml-form-html": "HTML ceeriin",
+	"securehtml-form-submit": "Gudbi",
+	"securehtml-inputinstructions": "Geli magaca furaha (ikhtiyaari), sirta furaha, iyo HTML-ga ceeriin ee aad rabto.\nHaddii aan magaca furaha la cayimin, furaha ugu horreeya ee <code>$wgSecureHTMLSecrets</code> ayaa loo qaadan doonaa.",
+	"securehtml-outputinstructions": "Koobi garee koodka kore SIDA SAXDA AH oo ku dheji tifaftiraha wiki-ga.\nHaddii koodka la soo saaray uusan shaqayn, isku day inaad ka saarto dhammaan kala go'ayaasha khadadka HTML-ga gelinta oo dib u soo saar."
+}
