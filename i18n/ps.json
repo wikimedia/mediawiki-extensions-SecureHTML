@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"securehtml": "خوندي اېچ‌ټي‌اېم‌اېل",
+	"securehtml-desc": "تاسو ته په مجازه او خوندي لار د يو خپلسري اېچ‌ټي‌اېم‌اېل رانغاړلو اجازه درکوي.",
+	"securehtml-nokeys": "تېروتنه: <code>$wgSecureHTMLSecrets</code> بسيا شوی نه دی.",
+	"securehtml-hashrequired": "تېروتنه: # زينه‌پايې ته اړتيا ده.",
+	"securehtml-invalidhash": "تېروتنه: ناسمه زينه‌پايه  # .",
+	"securehtml-input-title": "اېچ‌ټي‌اېم‌اېل ورکړېينه",
+	"securehtml-generatedoutput-title": "زېږېدلې ترلاسنه",
+	"securehtml-renderedhhtml-title": "وړاندې‌شوی اېچ‌ټي‌اېم‌اېل",
+	"securehtml-form-keyname": "کونجي نوم (اختياري)",
+	"securehtml-form-keysecret": "د کونجي راز",
+	"securehtml-form-html": "اومه اېچ‌ټي‌اېم‌اېل",
+	"securehtml-form-submit": "سپارل",
+	"securehtml-inputinstructions": "د کونجي نوم (اختياري)، د کونجي راز، او ټول اومه اېچ‌تي‌اېم‌اېل دننه کړئ.\nکه د کونجي نوم مشخص شوی نه وي؛ نو لومړۍ کونجي به په <code>$wgSecureHTMLSecrets</code> کې په پام کې ونيول شي.",
+	"securehtml-outputinstructions": "پورته کوډ کټ‌مټ ولمېسئ او په ويکي‌سمونگر کې يې ولېښئ.\nکه زېږول شوي کوډ کار ونکړ؛ نو هڅه وکړئ چې ټول کرښ‌کتنمخونه د ورکړېينې اېچ‌ټي‌اېم‌اېل څخه لرې کړئ او بيا يې جوړ کړئ."
+}
